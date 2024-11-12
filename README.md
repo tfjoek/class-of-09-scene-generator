@@ -15,17 +15,13 @@ THIS AN ALPHA VERSION SHIT WILL BREAK SHIT WONT WORK SHIT WILL LOOK UGLY
 <BR>ONLY DESKTOP SUPPORTED ALSO IF IT LOOKS FUCKED UP JUST ZOOM IN/OUT AND IT FIX IT
 <br>link to site -> 
 │││ https://www.givememoneyplease.xyz/ │││ <- link to site 
-
-
-
-
 ---
 
 ## Features
 - uhh make characters talk and stuff 
 - just try it out
 - yeah i will update this when its good
-<br>
+
 
 ---
 ## Suggestions/Help
@@ -34,18 +30,14 @@ feel free to fork this and do literally anything you want
 if you have any suggestions / bugreports you can make an issue or just dm me on discord (tfjoek)
 
 i will work on this when i have time (im procrastinating all school work)
-
 ---
 ## Local Setup
-
 
 1.
    ```bash
    git clone https://github.com/tfjoek/class-of-09-scene-generator.git
    pip install -r requirements.txt
    python app.py
-<br>
-
 ## License
 
 
