@@ -1,6 +1,6 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Class_Of_09_Scene_Generator_0"></a>Class Of '09 Scene Generator</h1>
 <p class="has-line-data" data-line-start="2" data-line-end="5">an interactive tool to create custom scenes with character placements, dialogues, and backgrounds<br>
-link to site -&gt; │││ <a href="https://www.givememoneyplease.xyz/">https://www.givememoneyplease.xyz/</a> │││<br>
+link to site -&gt; │││ <a href="https://www.givememoneyplease.xyz/">https://www.givememoneyplease.xyz/</a> │││ also pro tip go f11 in the scene for better<br>
 !!! ONLY SUPPORTING DESKTOP AND SCALING IS FUCKED ANYWAY FOR LAPTOPS (U CAN JUST ZOOM OUT IF NEEDED) !!!</p>
 <h1 class="code-line" data-line-start=5 data-line-end=6 ><a id="README_BEFORE_USING_IM_SERIOUS_5"></a>README BEFORE USING IM SERIOUS…</h1>
 <p class="has-line-data" data-line-start="7" data-line-end="11">!!! ONLY SUPPORTING DESKTOP AND SCALING IS FUCKED ANYWAY FOR LAPTOPS (U CAN JUST ZOOM OUT IF NEEDED ON SITE) !!!<br>
