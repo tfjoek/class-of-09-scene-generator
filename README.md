@@ -1,6 +1,3 @@
-<p align="center"><img src="https://i.ibb.co/QrqGRyg/68747470733a2f2f692e6962622e636f2f326359396653542f696d6167652d7073642e706e67-removebg-preview.png" width="400" alt="project-image"></p>
-
-
 
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Class_Of_09_Scene_Generator_0"></a>Class of '09 Scene Generator</h1>
 <p class="has-line-data" data-line-start="2" data-line-end="5">an interactive tool to create custom scenes with character placements, dialogues, and backgrounds<br>
