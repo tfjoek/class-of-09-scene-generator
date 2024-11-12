@@ -1,5 +1,7 @@
 <p align="center"><img src="https://i.ibb.co/2cY9fST/image-psd.png" width="400" alt="project-image"></p>
-<img src="https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator" alt="GitHub stars">
+![GitHub Stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator)
+![GitHub Views](https://visitor-badge.laobi.icu/badge?page_id=tfjoek.class-of-09-scene-generator)
+
 
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Class_Of_09_Scene_Generator_0"></a>Class of '09 Scene Generator</h1>
 <p class="has-line-data" data-line-start="2" data-line-end="5">an interactive tool to create custom scenes with character placements, dialogues, and backgrounds<br>
