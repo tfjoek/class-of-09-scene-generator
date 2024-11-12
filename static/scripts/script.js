@@ -56,7 +56,6 @@ function updatePlacementControls() {
     });
 }
 
-
 function moveCharacter(index, value) {
     characters[index].element.style.left = `${value}%`;
 }
