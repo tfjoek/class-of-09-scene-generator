@@ -51,10 +51,12 @@ function updatePlacementControls() {
             <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}" oninput="moveCharacter(${index}, this.value)">
             <label for="flip-${index}">Flip</label>
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
+            <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
         `;
         container.appendChild(sliderContainer);
     });
 }
+
 
 function moveCharacter(index, value) {
     characters[index].element.style.left = `${value}%`;
@@ -69,6 +71,14 @@ function toggleFlip(index) {
         characterElement.style.transform = characterElement.style.transform.replace("scaleX(-1)", "");
     }
 }
+
+function removeCharacter(index) {
+    const character = characters[index];
+    character.element.remove(); 
+    characters.splice(index, 1); 
+    updatePlacementControls(); 
+}
+
 
 function toggleDialogueCreator() {
     closeAllMenus();
