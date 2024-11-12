@@ -39,6 +39,7 @@ i will work on this when i have time (im procrastinating all school work)
    git clone https://github.com/tfjoek/class-of-09-scene-generator.git
    pip install -r requirements.txt
    python app.py
+!!! theres some random ass stuff like geopy in the requirements for some reaason so my bad !!!
 ## License
 
 
