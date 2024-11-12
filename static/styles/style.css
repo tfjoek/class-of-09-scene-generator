@@ -25,23 +25,36 @@ html, body {
 }
 
 .menu {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border-radius: 5px;
     font-size: 18px;
     font-family: 'CM Handwriting One', sans-serif;
     display: flex;
     gap: 10px;
     justify-content: center;
     position: absolute;
-    top: 20px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
+    width:100%
 }
 
+label[for="character"] {           
+    font-size: 25px;
+    padding-top: 11px;
+    padding-left: 15px;
+}
+
+label[for="background"] {           
+    font-size: 25px;
+    padding-top: 11px;
+    padding-left: 15px;
+}
+
+
 .button-style {
-    font-size: 18px;
+    font-size: 22px;
     padding: 10px 20px;
     border: 1px solid #666;
     border-radius: 8px;
@@ -148,7 +161,7 @@ select {
     overflow: hidden;
     text-overflow: ellipsis;
     left: 183px;
-    top: -77px;
+    top: -74px;
 }
 
 .dialogue-input {
@@ -172,7 +185,7 @@ select {
 }
 
 .character-name-input::placeholder {
-    color: #24a4ef;
+    color: #289cec;
     opacity: 1;
 }
 
