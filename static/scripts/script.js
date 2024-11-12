@@ -89,7 +89,7 @@ function addDialogue() {
 }
 
 function updateCharacterForDialogue(index, characterFile) {
-    const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
+    const characterName = characters.find(char => char.file === characterFile).name;
     dialogues[index].character = characterName;
     dialogues[index].characterFile = characterFile;
 }
@@ -97,6 +97,7 @@ function updateCharacterForDialogue(index, characterFile) {
 function updateDialogueList() {
     const list = document.getElementById("dialogue-list");
     list.innerHTML = "";
+
     dialogues.forEach((dialogue, index) => {
         const item = document.createElement("div");
         item.className = "dialogue-item";
