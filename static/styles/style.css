@@ -37,7 +37,7 @@ html, body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100; /* High z-index to keep menu on top */
+    z-index: 100;
 }
 
 .button-style {
@@ -61,13 +61,11 @@ html, body {
     color: #3498db;
 }
 
-/* CSS for scrollable dialogue list */
 #dialogue-list {
-    max-height: 400px; /* Adjust height as needed */
+    max-height: 400px;
     overflow-y: auto;
-    padding-right: 10px; /* Add some space for scrolling */
+    padding-right: 10px;
 }
-
 
 .dialogue-box {
     position: absolute;
@@ -88,11 +86,6 @@ html, body {
     padding: 20px;
 }
 
-
-.button-style:hover {
-    background-color: #444;
-}
-
 label {
     color: white;
     margin-right: 10px;
@@ -101,26 +94,26 @@ label {
 
 select {
     font-family: 'CM Handwriting One', sans-serif;
-    font-size: 20px; /* Make the font size consistent with the buttons */
+    font-size: 20px;
     background-color: #333;
     color: white;
     border: 1px solid #666;
-    padding: 10px 20px; /* Same padding as the buttons */
+    padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    width: auto; /* Let the dropdown width match the button width */
+    width: auto;
     transition: background-color 0.3s;
     text-align: center;
 }
 
 .character-display {
     position: absolute;
-    bottom: 20%; /* Adjust this to move the character images up if they overlap with sliders */
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     max-width: 64%;
     max-height: 105%;
-    z-index: 10; /* Lower z-index to ensure interactive elements are on top */
+    z-index: 10;
 }
 
 .preview {
@@ -137,31 +130,9 @@ select {
     z-index: 1;
 }
 
-.dialogue-box {
-    position: absolute;
-    bottom: -1px; /* Moves the box 10px down */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 240px); /* Reduces width by 50px */
-    height: 225px; /* Adjust height as needed for the image */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-image: url('/static/images/aaa.png'); /* Ensure path is correct */
-    background-size: 100% 100%; /* Scale the image to fit the dialogue box */
-    background-repeat: no-repeat;
-    z-index: 75;
-    opacity: 0.95;
-    box-sizing: border-box;
-    padding: 20px;
-    scale:99%;
-}
-
-
-
 .character-name-input {
-    position: absolute; /* Set to absolute for fixed positioning */
-    width: 35%; /* Adjust width as necessary */
+    position: absolute;
+    width: 35%;
     padding-left: 10px;
     font-size: 66px;
     font-family: 'HelveticaExtraCompressed', sans-serif;
@@ -176,12 +147,12 @@ select {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    left: 183px; /* Position it accurately */
-    top: -77px;  /* Position it accurately */
+    left: 183px;
+    top: -77px;
 }
 
 .dialogue-input {
-    position: absolute; /* Set to absolute for fixed positioning */
+    position: absolute;
     width: 65%;
     height: 90%;
     font-size: 46px;
@@ -196,20 +167,20 @@ select {
     text-align: left;
     white-space: pre-wrap;
     z-index: 77;
-    left: 190px; /* Position it accurately */
-    top: -2px;  /* Position it accurately */
+    left: 190px;
+    top: -2px;
 }
 
 .character-name-input::placeholder {
     color: #24a4ef;
-    opacity: 1; /* For Firefox */
+    opacity: 1;
 }
 
-/* Placeholder for the dialogue text area */
 .dialogue-input::placeholder {
     color: black;
-    opacity: 1; /* For Firefox */
+    opacity: 1;
 }
+
 #next-dialogue-button {
     padding: 10px 20px;
     font-size: 18px;
@@ -221,7 +192,7 @@ select {
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s;
-    z-index: 80; /* High z-index to ensure button is on top */
+    z-index: 80;
     position: relative;
 }
 
@@ -231,14 +202,14 @@ select {
 
 #slider-controls {
     position: absolute;
-    top: 100px; /* Adjust as needed to position the sliders below the menu */
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 90; /* Ensure sliders are on top of character images */
+    z-index: 90;
 }
 
 .slider-container {
@@ -254,33 +225,33 @@ select {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%; /* Increased width for more space */
-    padding: 30px; /* Increased padding for a more comfortable layout */
-    background: rgba(0, 0, 0, 0.9); /* Slightly darker for better contrast */
+    width: 60%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 120;
     display: none;
-    font-size: 24px; /* Increased font size for readability */
+    font-size: 24px;
 }
 
 #dialogue-creator h3 {
-    font-size: 32px; /* Larger title font size */
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
 #dialogue-creator input[type="text"] {
-    font-size: 22px; /* Larger input font size */
+    font-size: 22px;
     padding: 10px;
-    width: 80%; /* Adjusted width */
+    width: 80%;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 #dialogue-creator button {
-    font-size: 20px; /* Larger button font size */
+    font-size: 20px;
     padding: 12px 24px;
     margin-top: 10px;
     border-radius: 8px;
@@ -296,23 +267,23 @@ select {
 }
 
 .dialogue-item {
-    margin-bottom: 20px; /* Increased margin for spacing */
-    font-size: 26px; /* Larger font size for readability */
+    margin-bottom: 20px;
+    font-size: 26px;
 }
 
 .dialogue-item b {
-    font-size: 28px; /* Larger font for the label */
+    font-size: 28px;
 }
 
 .dialogue-item select {
-    font-size: 24px; /* Larger font for the dropdown */
-    padding: 10px 15px; /* Increased padding for better clickability */
+    font-size: 24px;
+    padding: 10px 15px;
     border-radius: 8px;
     margin-left: 15px;
 }
 
 .dialogue-item button {
-    font-size: 22px; /* Larger font for the Delete button */
+    font-size: 22px;
     padding: 12px 20px;
     border-radius: 8px;
     background-color: #333;
@@ -326,40 +297,39 @@ select {
     background-color: #444;
 }
 
-/* Enhanced styling for the placement editor box */
 #placement-editor {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%; /* Increased width for more space */
-    padding: 30px; /* Increased padding for a more comfortable layout */
-    background: rgba(0, 0, 0, 0.9); /* Slightly darker for better contrast */
+    width: 60%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 120;
     display: none;
     font-family: 'CM Handwriting One', sans-serif;
-    font-size: 24px; /* Increased font size for readability */
+    font-size: 24px;
 }
 
 #placement-editor h3 {
-    font-size: 32px; /* Larger title font size */
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
 #placement-editor .slider-container label {
-    font-size: 26px; /* Larger font size for labels */
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
 #placement-editor .slider-container input[type="range"] {
-    width: 80%; /* Makes the slider larger for easier control */
+    width: 80%;
 }
 
 #placement-editor button {
-    font-size: 20px; /* Larger button font size */
+    font-size: 20px;
     padding: 12px 24px;
     margin-top: 10px;
     border-radius: 8px;
@@ -372,4 +342,4 @@ select {
 
 #placement-editor button:hover {
     background-color: #555;
-
+}

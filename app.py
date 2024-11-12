@@ -3,7 +3,6 @@ import json
 
 app = Flask(__name__)
 
-# Function to load images from JSON
 def load_images():
     with open("static/config/images.json") as file:
         images = json.load(file)
@@ -11,7 +10,7 @@ def load_images():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    images = load_images()  # Load images once
+    images = load_images() 
 
     selected_background = "classroom.jpg"
     selected_character = None

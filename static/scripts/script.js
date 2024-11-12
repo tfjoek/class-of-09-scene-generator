@@ -26,20 +26,20 @@ function addCharacter() {
     }
 }
 
-
 function closeAllMenus() {
     document.getElementById("placement-editor").style.display = "none";
     document.getElementById("dialogue-creator").style.display = "none";
 }
 
 function togglePlacementEditor() {
-    closeAllMenus(); // Close any open menus first
+    closeAllMenus();
     const editor = document.getElementById("placement-editor");
     editor.style.display = editor.style.display === "none" ? "block" : "none";
     if (editor.style.display === "block") {
         updatePlacementControls();
     }
 }
+
 function updatePlacementControls() {
     const container = document.getElementById("placement-controls");
     container.innerHTML = "";
@@ -60,11 +60,22 @@ function moveCharacter(index, value) {
     characters[index].element.style.left = `${value}%`;
 }
 
+function toggleFlip(index) {
+    const characterElement = characters[index].element;
+    const flipCheckbox = document.getElementById(`flip-${index}`);
+    if (flipCheckbox.checked) {
+        characterElement.style.transform += " scaleX(-1)";
+    } else {
+        characterElement.style.transform = characterElement.style.transform.replace("scaleX(-1)", "");
+    }
+}
+
 function toggleDialogueCreator() {
-    closeAllMenus(); // Close any open menus first
+    closeAllMenus();
     const creator = document.getElementById("dialogue-creator");
     creator.style.display = creator.style.display === "none" ? "block" : "none";
 }
+
 function addDialogue() {
     const text = document.getElementById("dialogue-input").value;
     const characterFile = document.getElementById("character-select").value;
@@ -77,7 +88,6 @@ function addDialogue() {
     }
 }
 
-
 function updateCharacterForDialogue(index, characterFile) {
     const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
     dialogues[index].character = characterName;
@@ -87,7 +97,6 @@ function updateCharacterForDialogue(index, characterFile) {
 function updateDialogueList() {
     const list = document.getElementById("dialogue-list");
     list.innerHTML = "";
-
     dialogues.forEach((dialogue, index) => {
         const item = document.createElement("div");
         item.className = "dialogue-item";
@@ -154,21 +163,8 @@ function resetDialogueBox() {
     document.getElementById("preview-dialogue-text").value = '';
 }
 
-
-function toggleFlip(index) {
-    const characterElement = characters[index].element;
-    const flipCheckbox = document.getElementById(`flip-${index}`);
-    
-    if (flipCheckbox.checked) {
-        characterElement.style.transform += " scaleX(-1)";
-    } else {
-        characterElement.style.transform = characterElement.style.transform.replace("scaleX(-1)", "");
-    }
-}
-
-
 function closeDialogueBox() {
     document.getElementById("dialogue-box").style.display = "none";
-    previewMode = false; // Exit preview mode if applicable
-    document.getElementById("menu").style.display = "flex"; // Show the menu again if needed
+    previewMode = false;
+    document.getElementById("menu").style.display = "flex";
 }
