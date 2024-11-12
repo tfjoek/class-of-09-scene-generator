@@ -8,7 +8,7 @@ this version is in alpha! meaning its shit and buggy and ugly so if its not to u
 all features ever u would want is already in my mind dont worry but if u like to give suggestions leave them here or reddit or discord (tfjoek) idc<br>
 ok go ahead now, REMEMBER THIS IS THE FIRST VERSION</p>
 <h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="IF_U_WANT_TO_HELP_12"></a>IF U WANT TO HELP</h2>
-<h3 class="code-line" data-line-start=15 data-line-end=16 ><a id="stuff_used_very_prone_to_changing_alot_of_stuff_like_db_for_images_etc_15"></a>stuff used very prone to changing alot of stuff like db for images etc</h3>
+<h3 class="code-line" data-line-start=15 data-line-end=16 ><a id="stuff_used_very_prone_to_changing_alot_of_stuff_like_db_for_images_etc_15"></a>stuff used very prone to changing alot of stuff like db for images etc or just legit anything else</h3>
 <ul>
 <li class="has-line-data" data-line-start="16" data-line-end="17">Python: mini backend stuff</li>
 <li class="has-line-data" data-line-start="17" data-line-end="18">Flask: mini backend stuff</li>
