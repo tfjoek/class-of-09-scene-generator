@@ -41,9 +41,9 @@ html, body {
 }
 
 .button-style {
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px 20px;
-    border: 1px solid #666; /* Light border for a similar effect */
+    border: 1px solid #666;
     border-radius: 8px;
     background-color: #333;
     color: white;
@@ -51,6 +51,35 @@ html, body {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.button-style:hover {
+    background-color: #444;
+}
+
+.character-name-input {
+    font-size: 70px;
+    color: #3498db;
+}
+
+.dialogue-box {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 230px);
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('/static/images/aaa.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 75;
+    opacity: 0.95;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
 
 .button-style:hover {
     background-color: #444;
