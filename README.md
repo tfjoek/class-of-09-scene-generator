@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.ibb.co/2cY9fST/image-psd.png" width="400" alt="project-image"></p>
+<p align="center"><img src="https://i.ibb.co/QrqGRyg/68747470733a2f2f692e6962622e636f2f326359396653542f696d6167652d7073642e706e67-removebg-preview.png" width="400" alt="project-image"></p>
 
 
 
