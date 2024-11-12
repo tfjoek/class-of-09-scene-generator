@@ -61,6 +61,14 @@ html, body {
     color: #3498db;
 }
 
+/* CSS for scrollable dialogue list */
+#dialogue-list {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 10px; /* Add some space for scrolling */
+}
+
+
 .dialogue-box {
     position: absolute;
     bottom: -1px;
