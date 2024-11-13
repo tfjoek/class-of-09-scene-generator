@@ -26,85 +26,95 @@ html, body {
 
 .menu {
     background: rgba(0, 0, 0, 0.5);
-    padding: 1.5vh;
-    font-size: 1.2vw;
+    padding: 25px;
+    font-size: 18px;
+    font-family: 'CM Handwriting One', sans-serif;
     display: flex;
-    gap: 1vw;
+    gap: 10px;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    width: 100%;
+    width:100%
 }
 
-label[for="character"], label[for="background"] {
-    font-size: 1.4vw;
-    padding-top: 0.6vh;
-    padding-left: 0.6vw;
+label[for="character"] {           
+    font-size: 25px;
+    padding-top: 11px;
+    padding-left: 15px;
 }
+
+label[for="background"] {           
+    font-size: 25px;
+    padding-top: 11px;
+    padding-left: 15px;
+}
+
 
 .button-style {
-    font-size: 1.2vw;
-    padding: 0.8vh 1.5vw;
-    border: 0.1vw solid #666;
-    border-radius: 0.5vw;
+    font-size: 22px;
+    padding: 10px 20px;
+    border: 1px solid #666;
+    border-radius: 8px;
     background-color: #333;
     color: white;
+    font-family: 'CM Handwriting One', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: 'CM Handwriting One', sans-serif;
 }
 
 .button-style:hover {
     background-color: #444;
 }
 
+.character-name-input {
+    font-size: 70px;
+    color: #3498db;
+}
+
 #dialogue-list {
-    max-height: 25vh;
+    max-height: 400px;
     overflow-y: auto;
-    padding-right: 0.5vw;
+    padding-right: 10px;
 }
 
 .dialogue-box {
     position: absolute;
-    bottom: 0.0vh;
+    bottom: -1px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    min-height: 24vh; /* Set minimum height to ensure image visibility */
+    width: calc(100% - 230px);
+    height: 230px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-image: url('/static/images/aaa.png');
-    background-size: contain; /* Ensure the image fits within the box */
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center; /* Center the image within the box */
     z-index: 75;
     opacity: 0.95;
     box-sizing: border-box;
-    padding: 1.5vw;
+    padding: 20px;
 }
-
-
-
 
 label {
     color: white;
-    margin-right: 0.5vw;
+    margin-right: 10px;
     text-align: center;
 }
 
 select {
     font-family: 'CM Handwriting One', sans-serif;
-    font-size: 1em;
+    font-size: 20px;
     background-color: #333;
     color: white;
-    border: 0.1em solid #666;
-    padding: 0.5vh 1vw;
-    border-radius: 0.5vw;
+    border: 1px solid #666;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
+    width: auto;
     transition: background-color 0.3s;
     text-align: center;
 }
@@ -114,13 +124,10 @@ select {
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 64vw; /* Equivalent to 64% of the viewport width */
-    height: 105vh; /* Equivalent to 105% of the viewport height */
-    max-width: 30vw; /* Constraining max dimensions as well */
-    max-height: 105vh;
+    max-width: 64%;
+    max-height: 105%;
     z-index: 10;
 }
-
 
 .preview {
     position: relative;
@@ -138,8 +145,9 @@ select {
 
 .character-name-input {
     position: absolute;
-    width: 25%;
-    font-size: 3.4vw;
+    width: 35%;
+    padding-left: 10px;
+    font-size: 66px;
     font-family: 'HelveticaExtraCompressed', sans-serif;
     color: #24a4ef;
     text-align: left;
@@ -147,19 +155,22 @@ select {
     border: none;
     outline: none;
     letter-spacing: -0.5px;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
     z-index: 76;
-    left: 11vw;
-    top: -7.5vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    left: 183px;
+    top: -74px;
 }
-
 
 .dialogue-input {
     position: absolute;
     width: 65%;
     height: 90%;
-    font-size: 2.4vw;
-    line-height: 1.2em;
+    font-size: 46px;
+    line-height: 60px;
+    padding: 10px;
     background-color: transparent;
     border: none;
     font-family: 'CM Handwriting One', sans-serif;
@@ -169,8 +180,8 @@ select {
     text-align: left;
     white-space: pre-wrap;
     z-index: 77;
-    left: 11.3vw;
-    top: 1.1vh;
+    left: 190px;
+    top: -2px;
 }
 
 .character-name-input::placeholder {
@@ -184,13 +195,13 @@ select {
 }
 
 #next-dialogue-button {
-    padding: 0.5vh 1vw;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 18px;
     font-family: 'CM Handwriting One', sans-serif;
     color: white;
     background-color: #333;
     border: none;
-    border-radius: 0.3vw;
+    border-radius: 5px;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s;
@@ -204,20 +215,20 @@ select {
 
 #slider-controls {
     position: absolute;
-    top: 6vh;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 1vh;
+    gap: 10px;
     z-index: 90;
 }
 
 .slider-container {
     display: flex;
     align-items: center;
-    gap: 1vw;
+    gap: 10px;
     font-family: 'CM Handwriting One', sans-serif;
     color: white;
 }
@@ -228,35 +239,35 @@ select {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    padding: 1.5vh;
+    padding: 30px;
     background: rgba(0, 0, 0, 0.9);
     color: white;
-    border-radius: 0.5vw;
-    box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 120;
     display: none;
-    font-size: 1.3vw;
+    font-size: 24px;
 }
 
 #dialogue-creator h3 {
-    font-size: 2vw;
-    margin-bottom: 1vh;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 #dialogue-creator input[type="text"] {
-    font-size: 1.2vw;
-    padding: 0.5vh;
+    font-size: 22px;
+    padding: 10px;
     width: 80%;
-    margin-bottom: 1vh;
-    border-radius: 0.3vw;
-    border: 0.05vw solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 #dialogue-creator button {
-    font-size: 1.2vw;
-    padding: 0.6vh 1.2vw;
-    margin-top: 0.5vh;
-    border-radius: 0.4vw;
+    font-size: 20px;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 8px;
     background-color: #444;
     color: white;
     border: none;
@@ -269,25 +280,25 @@ select {
 }
 
 .dialogue-item {
-    margin-bottom: 1vh;
-    font-size: 1.3vw;
+    margin-bottom: 20px;
+    font-size: 26px;
 }
 
 .dialogue-item b {
-    font-size: 1.5vw;
+    font-size: 28px;
 }
 
 .dialogue-item select {
-    font-size: 1.3vw;
-    padding: 0.5vh 0.8vw;
-    border-radius: 0.4vw;
-    margin-left: 0.8vw;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-left: 15px;
 }
 
 .dialogue-item button {
-    font-size: 1.2vw;
-    padding: 0.6vh 1vw;
-    border-radius: 0.4vw;
+    font-size: 22px;
+    padding: 12px 20px;
+    border-radius: 8px;
     background-color: #333;
     color: white;
     border: none;
@@ -305,25 +316,25 @@ select {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    padding: 1.5vh;
+    padding: 30px;
     background: rgba(0, 0, 0, 0.9);
     color: white;
-    border-radius: 0.5vw;
-    box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 120;
     display: none;
     font-family: 'CM Handwriting One', sans-serif;
-    font-size: 1.3vw;
+    font-size: 24px;
 }
 
 #placement-editor h3 {
-    font-size: 2vw;
-    margin-bottom: 1vh;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 #placement-editor .slider-container label {
-    font-size: 1.4vw;
-    margin-bottom: 0.5vh;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
 #placement-editor .slider-container input[type="range"] {
@@ -331,10 +342,10 @@ select {
 }
 
 #placement-editor button {
-    font-size: 1.2vw;
-    padding: 0.6vh 1.2vw;
-    margin-top: 0.5vh;
-    border-radius: 0.4vw;
+    font-size: 20px;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 8px;
     background-color: #444;
     color: white;
     border: none;
