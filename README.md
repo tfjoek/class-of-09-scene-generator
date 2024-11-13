@@ -52,6 +52,8 @@ if something you see here thats missing for a cool feature tell me
 - all characters/backgrounds from all 3 games including every clothing/expression option
 
 - add ur own bgm/sound effects / ur own voicelines or whatever for each dialogue
+- add ur own background/character sprite
+- modify character size (useful for custom sprite)
 - moving characters during scene (like after/before a dialogue plays u can animate the character to move)
 
 ### boring code stuff
