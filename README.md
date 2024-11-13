@@ -7,7 +7,7 @@ Class of '09 Scene Generator
 
 an interactive tool to create custom scenes with character placements, dialogues, and backgrounds
 
-![Chat Preview](https://i.ibb.co/C7jyGNQ/image.png)
+![Chat Preview]([https://i.ibb.co/C7jyGNQ/image.png](https://i.ibb.co/fqmjhKj/imasdasdaddge-psd.png))
 
 ---
 # README BEFORE USING
