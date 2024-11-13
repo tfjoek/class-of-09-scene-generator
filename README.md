@@ -42,12 +42,16 @@ i will work on this when i have time (im procrastinating all school work im cook
 ## 🔧 Features/TODO
 
 if something you see here thats missing for a cool feature tell me
+
+### highest priority
+- fix resolution for smaller screens (mobile support much later sorry)
+  
 ### major features
 - saving/exporting scenes (many different solutions available for this)
 
 - a choice generator that you can use in the middle of ur scene
 - an ending generator that you can use in the end of ur scene
-- mobile support/  in general responsive
+- mobile support
 ### todo currently
 - all characters/backgrounds from all 3 games including every clothing/expression option
 
