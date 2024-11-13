@@ -1,48 +1,72 @@
-Class of '09 Scene Generator
-============
+<img src="https://i.ibb.co/Qb6wzqJ/imdddage-psd.png" alt="LOGO" width="200">
+
+
+> an interactive tool to create custom scenes with character placements, dialogues, and backgrounds
+
 [![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/issues)
 [![GitHub license](https://img.shields.io/github/license/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/blob/main/LICENSE)
-
-an interactive tool to create custom scenes with character placements, dialogues, and backgrounds
-
-![Chat Preview](https://i.ibb.co/fqmjhKj/imasdasdaddge-psd.png)
-
----
-# README BEFORE USING
-link to site -> │││ https://www.givememoneyplease.xyz/ │││ <- link to site<br>
-THIS AN ALPHA VERSION SHIT WILL BREAK SHIT WONT WORK SHIT WILL LOOK UGLY 
-<BR>ONLY DESKTOP SUPPORTED ALSO IF IT LOOKS FUCKED UP JUST ZOOM IN/OUT AND IT FIX IT<br>
-IDK HOW MUCH TRAFFIC THE WEBSITE CAN TAKE SO IF IT CRASHES SRY<br>
-also if u have github account plz star for eternal blessings
+<br>
+![SITE PREVIEW](https://i.ibb.co/fqmjhKj/imasdasdaddge-psd.png)
 
 
----
 
-## Features
-- uhh make characters talk and stuff 
-- just try it out
-- yeah i will update this when its good
----
-## Suggestions/Help
+# ⚠️ README BEFORE USING
+
+## THIS VERSION IS CURRENTLY IN _ALPHA_ SO EVERY FEATURE EVER IS MISSING AND DOESNT SUPPORT MOBILE AT ALL! THANKS. also please star this repo<br> and im a silly student so i cant work on this 24/7 sorry if i dont respond
+
+# [link to the tool online click me!](https://givememoneyplease.xyz)
+
+
+## 📦 Local Setup 
+
+
+
+   ```
+   git clone https://github.com/tfjoek/class-of-09-scene-generator.git
+   pip install -r requirements.txt
+   python app.py
+   ```
+!!! theres some random ass stuff like geopy in the requirements for some reaason so my bad !!!
+
+
+## 💬 Contributing/Bugs
+
 feel free to fork this and do literally anything you want
 
 if you have any suggestions / bugreports you can make an issue or just dm me on discord (tfjoek)
 
-i will work on this when i have time (im procrastinating all school work)
+i will work on this when i have time (im procrastinating all school work im cooked)
 
----
-## Local Setup
+## 🔧 Features/TODO
+
+if something you see here thats missing for a cool feature tell me
+### major features
+- saving/exporting scenes (many different solutions available for this)
+
+- a choice generator that you can use in the middle of ur scene
+- an ending generator that you can use in the end of ur scene
+- mobile support/  in general responsive
+### todo currently
+- all characters/backgrounds from all 3 games including every clothing/expression option
+
+- add ur own bgm/sound effects / ur own voicelines or whatever for each dialogue
+- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
+
+### boring code stuff
+- move to react  so this shit isnt awful to develop
+- i need to start commenting LOL
 
 
-1.
-   ```bash
-   git clone https://github.com/tfjoek/class-of-09-scene-generator.git
-   pip install -r requirements.txt
-   python app.py
-!!! theres some random ass stuff like geopy in the requirements for some reaason so my bad !!!
-## License
+
+
+
+## 📜 bla bla bla
 
 
 This project is licensed under the Apache-2.0 license. 
+
+All rights to original 'Class of '09' content and assets belong to the original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
+
+
