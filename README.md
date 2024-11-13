@@ -25,6 +25,7 @@
 
    ```
    git clone https://github.com/tfjoek/class-of-09-scene-generator.git
+   cd class-of-09-scene-generator
    pip install -r requirements.txt
    python app.py
    ```
