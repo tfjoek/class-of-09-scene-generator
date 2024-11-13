@@ -14,6 +14,7 @@ an interactive tool to create custom scenes with character placements, dialogues
 link to site -> │││ https://www.givememoneyplease.xyz/ │││ <- link to site<br>
 THIS AN ALPHA VERSION SHIT WILL BREAK SHIT WONT WORK SHIT WILL LOOK UGLY 
 <BR>ONLY DESKTOP SUPPORTED ALSO IF IT LOOKS FUCKED UP JUST ZOOM IN/OUT AND IT FIX IT<br>
+IDK HOW MUCH TRAFFIC THE WEBSITE CAN TAKE SO IF IT CRASHES SRY<br>
 also if u have github account plz star for eternal blessings
 
 
