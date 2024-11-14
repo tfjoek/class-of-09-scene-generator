@@ -34,7 +34,7 @@
 
 ## 💬 Contributing/Bugs
 
-feel free to fork this and do literally anything you want
+feel free to fork this and do anything on the feature/todo list or just literally anything else you want
 
 if you have any suggestions / bugreports you can make an issue or just dm me on discord (tfjoek)
 
