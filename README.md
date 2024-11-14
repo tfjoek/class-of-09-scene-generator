@@ -45,8 +45,8 @@ i will work on this when i have time (im procrastinating all school work im cook
 if something you see here thats missing for a cool feature tell me
 
 ### highest priority
-- fix resolution for smaller screens (mobile support much later sorry)
-- and change pixels into something better etc
+- make site responsive (imposible challenge)
+
   
 ### major features
 - saving/exporting scenes (many different solutions available for this)
