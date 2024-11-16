@@ -282,4 +282,3 @@ function setCustomBackground(input) {
         };
         reader.readAsDataURL(file);
     }
-}
