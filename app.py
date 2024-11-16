@@ -8,9 +8,15 @@ def load_images():
         images = json.load(file)
     return images
 
+def load_image_counts():
+    with open("static/config/people_images.json") as file:
+        image_counts = json.load(file)
+    return image_counts
+
 @app.route("/", methods=["GET", "POST"])
 def index():
-    images = load_images() 
+    images = load_images()
+    image_counts = load_image_counts()
 
     selected_background = "classroom.jpg"
     selected_character = None
@@ -19,11 +25,12 @@ def index():
         selected_background = request.form.get("background", "classroom.jpg")
         selected_character = request.form.get("character")
 
-    return render_template("index.html", 
-                           backgrounds=images['backgrounds'], 
-                           characters=images['characters'], 
-                           selected_background=selected_background, 
-                           selected_character=selected_character)
+    return render_template("index.html",
+                           backgrounds=images['backgrounds'],
+                           characters=images['characters'],
+                           selected_background=selected_background,
+                           selected_character=selected_character,
+                           image_counts=image_counts['people_images'])
 
 
 if __name__ == "__main__":

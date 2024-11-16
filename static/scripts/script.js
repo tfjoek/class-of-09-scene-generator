@@ -12,9 +12,9 @@ function addCharacter() {
     const characterFile = document.getElementById("character-select").value;
     const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
 
-    if (!characters.some(char => char.file === characterFile)) {
+    if (!characters.some((char) => char.file === characterFile)) {
         const img = document.createElement("img");
-        img.src = `/static/characters/${characterFile}`;
+        img.src = `/static/characters/${characterName.toLowerCase()}/1.png`;
         img.classList.add("character-display");
         img.style.position = "absolute";
         img.style.bottom = "0%";
@@ -22,7 +22,13 @@ function addCharacter() {
         img.style.transform = "translateX(-50%)";
         document.querySelector(".preview").appendChild(img);
 
-        characters.push({ file: characterFile, name: characterName, element: img });
+        let character = {
+            file: characterFile,
+            name: characterName,
+            element: img,
+            image: 1,
+        };
+        characters.push(character);
         updatePlacementControls();
     }
 }
@@ -53,7 +59,22 @@ function updatePlacementControls() {
             <label for="flip-${index}">Flip</label>
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
             <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
+            <select id="select-for-${index}" class="select-outfit"></select>
         `;
+
+        const selectElement = sliderContainer.querySelector(`#select-for-${index}`);
+
+        for (let i = 1; i <= image_counts[character.name.toLowerCase()]; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = `Outfit ${i}`;
+            selectElement.appendChild(option);
+        }
+
+        selectElement.addEventListener("change", function () {
+            let index = parseInt(selectElement.value, 10);
+            character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
+        });
         container.appendChild(sliderContainer);
     });
 }
@@ -74,9 +95,9 @@ function toggleFlip(index) {
 
 function removeCharacter(index) {
     const character = characters[index];
-    character.element.remove(); 
-    characters.splice(index, 1); 
-    updatePlacementControls(); 
+    character.element.remove();
+    characters.splice(index, 1);
+    updatePlacementControls();
 }
 
 function toggleDialogueCreator() {
@@ -91,15 +112,20 @@ function addDialogue() {
     const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
 
     if (text) {
-        const dialogue = { character: characterName, characterFile, text, audioFile: null };
+        const dialogue = {
+            character: characterName,
+            characterFile,
+            text,
+            audioFile: null,
+        };
         dialogues.push(dialogue);
         updateDialogueList();
-        document.getElementById("dialogue-input").value = '';
+        document.getElementById("dialogue-input").value = "";
     }
 }
 
 function updateCharacterForDialogue(index, characterFile) {
-    const characterName = characters.find(char => char.file === characterFile).name;
+    const characterName = characters.find((char) => char.file === characterFile).name;
     dialogues[index].character = characterName;
     dialogues[index].characterFile = characterFile;
 }
@@ -114,13 +140,17 @@ function updateDialogueList() {
         item.innerHTML = `
             <b>Dialogue:</b> ${dialogue.text}
             <select onchange="updateCharacterForDialogue(${index}, this.value)">
-                ${characters.map(({ file, name }) => `
-                    <option value="${file}" ${dialogue.characterFile === file ? 'selected' : ''}>${name}</option>
-                `).join('')}
+                ${characters
+                    .map(
+                        ({ file, name }) => `
+                    <option value="${file}" ${dialogue.characterFile === file ? "selected" : ""}>${name}</option>
+                `,
+                    )
+                    .join("")}
             </select>
             <button class="button-style" onclick="deleteDialogue(${index})">Delete</button>
             <button class="button-style" onclick="addVoiceLineOption(${index})">
-                ${dialogue.audioFile ? dialogue.audioFile.name : 'Voiceline'}
+                ${dialogue.audioFile ? dialogue.audioFile.name : "Voiceline"}
             </button>
         `;
         list.appendChild(item);
@@ -133,15 +163,15 @@ function deleteDialogue(index) {
 }
 
 function addVoiceLineOption(index) {
-    const audioInput = document.createElement('input');
-    audioInput.type = 'file';
-    audioInput.accept = 'audio/*';
+    const audioInput = document.createElement("input");
+    audioInput.type = "file";
+    audioInput.accept = "audio/*";
     audioInput.onchange = (event) => {
         const file = event.target.files[0];
         if (file) {
             dialogues[index].audioFile = {
                 url: URL.createObjectURL(file),
-                name: file.name
+                name: file.name,
             };
             updateDialogueList(); // Refresh to display the correct file name
         }
@@ -163,21 +193,11 @@ function startScenePreview() {
     }
 }
 
-function playCurrentDialogueAudio() {
-    const dialogue = dialogues[currentDialogueIndex];
-    if (dialogue.audioFile && dialogue.audioFile.url) {
-        const audio = new Audio(dialogue.audioFile.url);
-        audio.play();
-    }
-}
-
 function displayCurrentDialogue() {
-    if (dialogues.length > 0 && currentDialogueIndex < dialogues.length) {
-        const dialogue = dialogues[currentDialogueIndex];
-        document.getElementById("preview-character-name").value = dialogue.character;
-        document.getElementById("preview-dialogue-text").value = dialogue.text;
-        playCurrentDialogueAudio();
-    }
+    const dialogue = dialogues[currentDialogueIndex];
+    document.getElementById("preview-character-name").value = dialogue.character;
+    document.getElementById("preview-dialogue-text").value = dialogue.text;
+    playCurrentDialogueAudio();
 }
 
 function nextDialogue() {
@@ -188,7 +208,6 @@ function nextDialogue() {
         } else {
             alert("End of scene.");
             resetDialogueBox();
-            currentDialogueIndex = 0;
             previewMode = false;
             document.getElementById("menu").style.display = "flex";
             stopBackgroundAudio();
@@ -196,22 +215,29 @@ function nextDialogue() {
     }
 }
 
+function playCurrentDialogueAudio() {
+    const dialogue = dialogues[currentDialogueIndex];
+    if (dialogue.audioFile && dialogue.audioFile.url) {
+        const audio = new Audio(dialogue.audioFile.url);
+        audio.play();
+    }
+}
+
 document.getElementById("preview-background").addEventListener("click", nextDialogue);
 
-document.querySelectorAll(".button-style, #placement-editor, #dialogue-creator").forEach(el => {
-    el.addEventListener("click", event => event.stopPropagation());
+document.querySelectorAll(".button-style, #placement-editor, #dialogue-creator").forEach((el) => {
+    el.addEventListener("click", (event) => event.stopPropagation());
 });
 
 function resetDialogueBox() {
-    document.getElementById("preview-character-name").value = '';
-    document.getElementById("preview-dialogue-text").value = '';
+    document.getElementById("preview-character-name").value = "";
+    document.getElementById("preview-dialogue-text").value = "";
 }
 
 function closeDialogueBox() {
     document.getElementById("dialogue-box").style.display = "none";
     previewMode = false;
     document.getElementById("menu").style.display = "flex";
-    stopBackgroundAudio();
 }
 
 function addBackgroundAudioFile() {
@@ -251,7 +277,7 @@ function setCustomBackground(input) {
     const file = input.files[0];
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             document.querySelector(".preview").style.backgroundImage = `url(${e.target.result})`;
         };
         reader.readAsDataURL(file);
