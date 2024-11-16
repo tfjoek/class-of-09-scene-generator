@@ -44,24 +44,27 @@ i will work on this when i have time (im procrastinating all school work im cook
 
 if something you see here thats missing for a cool feature tell me
 
-### highest priority
+### todo currently / easiest
+- all characters/backgrounds from all 3 games including every clothing/expression option
+
+- add ur own bgm/sound effects / ur own voicelines or whatever for each dialogue
+- add ur own background/character sprite
+- make a custom option for dialogue choice (offscreen character)
+- modify character size (useful for custom sprite)
+- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
+- fix clothes being flipped so they dont reverse (would need 2 different sprites for each cloth)
+  
+### highest priority need helplol
 - make site responsive (imposible challenge)
 
   
-### major features
+### major features later
 - saving/exporting scenes (many different solutions available for this)
 
 - a choice generator that you can use in the middle of ur scene
 - an ending generator that you can use in the end of ur scene
 - mobile support
-### todo currently
-- all characters/backgrounds from all 3 games including every clothing/expression option
 
-- add ur own bgm/sound effects / ur own voicelines or whatever for each dialogue
-- add ur own background/character sprite
-- modify character size (useful for custom sprite)
-- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
-- fix clothes being flipped so they dont reverse (would need 2 different sprites for each cloth)
 
 ### boring code stuff
 - move to react  so this shit isnt awful to develop
