@@ -45,12 +45,12 @@ i will work on this when i have time (im procrastinating all school work im cook
 if something you see here thats missing for a cool feature tell me
 
 ### todo currently / easiest
-- all characters/backgrounds from all 3 games including every clothing/expression option
+- all characters/backgrounds from all 3 games including every clothing/expression option (see issue)
 
 - add ur own character sprite
 - make a custom option for dialogue choice (offscreen character)
-- modify character size (useful for custom sprite)
-- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
+- modify character size/location  (useful for fixing custom sprite locations etc)
+- moving characters during scene (like after/before a dialogue plays u can animate the character to move u get me yeah)
   
 ### highest priority need helplol
 - make site responsive (imposible challenge)
