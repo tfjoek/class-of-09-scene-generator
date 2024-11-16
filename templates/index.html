@@ -17,18 +17,22 @@
                     <option value="{{ bg.file }}">{{ bg.name }}</option>
                 {% endfor %}
             </select>
-            
-            
+
+
             <label for="character">Character:</label>
             <select id="character-select">
                 {% for char in characters %}
                     <option value="{{ char.file }}">{{ char.name }}</option>
                 {% endfor %}
             </select>
-            
-            
+
+            <select id="outfit-select">
+
+            </select>
 
             <button class="button-style" onclick="addCharacter()">Add Character</button>
+						<div id="outfit-container"></div> <!-- This is where the select dropdown will be added -->
+
             <button class="button-style" onclick="togglePlacementEditor()">Placement</button>
             <button class="button-style" onclick="toggleDialogueCreator()">Dialogue</button>
             <button class="button-style" onclick="startScenePreview()">Start Scene</button>
@@ -40,8 +44,8 @@
             <div id="placement-controls"></div>
             <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
         </div>
-        
-        
+
+
 
         <!-- Dialogue Creator Section -->
 <!-- Dialogue Creator Section -->
@@ -57,10 +61,10 @@
         <div class="dialogue-box" id="dialogue-box">
             <input type="text" class="character-name-input" id="preview-character-name" readonly placeholder="Character Name">
             <textarea class="dialogue-input" id="preview-dialogue-text" readonly placeholder="Dialogue text"></textarea>
-           
+
         </div>
-        
-    
+
+
 
     <!-- Link to external JavaScript file -->
     <script src="/static/scripts/script.js"></script>
