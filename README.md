@@ -14,7 +14,7 @@
 
 # ⚠️ README BEFORE USING
 
-## THIS VERSION IS CURRENTLY IN _BETA_ ITS NOT RESPONSIVE AT ALL IF IT LOOKS FUCKED UP JUST TRY ZOOMING IN/OUT ON THE SITE TILL IT LOOKS GOOD WORKS FOR ME ON MY LAPTOP. also please star this repo<br> and im a silly student so i cant work on this 24/7 sorry if i dont respond
+## THIS VERSION IS CURRENTLY IN _BETA_ NO MOBILE SUPPORT AT ALL + ITS NOT RESPONSIVE AT ALL FOR LAPTOPS OR SMTH IF IT LOOKS FUCKED UP JUST TRY ZOOMING IN/OUT ON THE SITE TILL IT LOOKS GOOD WORKS FOR ME ON MY LAPTOP. also please star this repo<br> and im a silly student so i cant work on this 24/7 sorry if i dont respond
 
 # [link to the tool online click me!](https://givememoneyplease.xyz)
 
