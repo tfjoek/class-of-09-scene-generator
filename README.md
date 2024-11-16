@@ -1,7 +1,7 @@
 <img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="250">
 
 
-> an interactive tool to create custom scenes with character placements, dialogues, and backgrounds
+> an interactive tool to create custom scenes with character placements, dialogues, voicelines/bgm and backgrounds!
 
 [![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)
