@@ -3,19 +3,12 @@ let currentDialogueIndex = 0;
 let characters = [];
 let previewMode = false;
 let image_counts = [];
+let backgroundAudio = null;
 
 function updateBackground(background) {
   document.querySelector(".preview").style.backgroundImage =
     `url('/static/backgrounds/${background}')`;
 }
-
-function getImageCounts() {
-  fetch("../characters/people_images.json").then((data) => {
-    console.log(data);
-  });
-}
-
-getImageCounts();
 
 function addCharacter() {
   const characterFile = document.getElementById("character-select").value;
@@ -99,7 +92,34 @@ function updatePlacementControls() {
             <label for="flip-${index}">Flip</label>
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
             <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
+						<select id="select for ${index}"></select>
         `;
+    // HERE
+    // selectElement = sliderContainer.querySelector()
+    const selectElement = sliderContainer.querySelector(
+      `select[id="select for ${index}"]`,
+    );
+    for (let i = 0; i < 10; i++) {
+      const option = document.createElement("option");
+      option.value = i; // You can set a value that corresponds to each number (or any other attribute you need)
+      option.textContent = `Outfit ${i}`; // Display text as "Option 0", "Option 1", etc.
+      selectElement.appendChild(option);
+    }
+    selectElement.addEventListener("change", function () {
+      let index = parseInt(selectElement.value, 10);
+      const characterName =
+        document.getElementById("character-select").selectedOptions[0]
+          .textContent;
+      console.log(characterName);
+
+      console.log(characters);
+      let character = characters.find((character) => {
+        return character.name === characterName;
+      });
+
+      console.log(character);
+      character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
+    });
     container.appendChild(sliderContainer);
   });
 }
@@ -145,6 +165,21 @@ function addDialogue() {
     updateDialogueList();
     document.getElementById("dialogue-input").value = "";
   }
+  // const text = document.getElementById("dialogue-input").value;
+  // const characterFile = document.getElementById("character-select").value;
+  // const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
+
+  if (text) {
+    const dialogue = {
+      character: characterName,
+      characterFile,
+      text,
+      audioFile: null,
+    };
+    dialogues.push(dialogue);
+    updateDialogueList();
+    document.getElementById("dialogue-input").value = "";
+  }
 }
 
 function updateCharacterForDialogue(index, characterFile) {
@@ -174,6 +209,9 @@ function updateDialogueList() {
                   .join("")}
             </select>
             <button class="button-style" onclick="deleteDialogue(${index})">Delete</button>
+            <button class="button-style" onclick="addVoiceLineOption(${index})">
+                ${dialogue.audioFile ? dialogue.audioFile.name : "Voiceline"}
+            </button>
         `;
     list.appendChild(item);
   });
@@ -182,6 +220,23 @@ function updateDialogueList() {
 function deleteDialogue(index) {
   dialogues.splice(index, 1);
   updateDialogueList();
+}
+
+function addVoiceLineOption(index) {
+  const audioInput = document.createElement("input");
+  audioInput.type = "file";
+  audioInput.accept = "audio/*";
+  audioInput.onchange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      dialogues[index].audioFile = {
+        url: URL.createObjectURL(file),
+        name: file.name,
+      };
+      updateDialogueList(); // Refresh to display the correct file name
+    }
+  };
+  audioInput.click();
 }
 
 function startScenePreview() {
@@ -214,6 +269,51 @@ function nextDialogue() {
       currentDialogueIndex = 0;
       previewMode = false;
       document.getElementById("menu").style.display = "flex";
+      if (dialogues.length > 0) {
+        currentDialogueIndex = 0;
+        displayCurrentDialogue();
+        document.getElementById("dialogue-box").style.display = "block";
+        document.getElementById("dialogue-creator").style.display = "none";
+        document.getElementById("menu").style.display = "none";
+        previewMode = true;
+        startBackgroundAudio();
+      } else {
+        resetDialogueBox();
+      }
+    }
+  }
+
+  function playCurrentDialogueAudio() {
+    const dialogue = dialogues[currentDialogueIndex];
+    if (dialogue.audioFile && dialogue.audioFile.url) {
+      const audio = new Audio(dialogue.audioFile.url);
+      audio.play();
+    }
+  }
+
+  function displayCurrentDialogue() {
+    if (dialogues.length > 0 && currentDialogueIndex < dialogues.length) {
+      const dialogue = dialogues[currentDialogueIndex];
+      document.getElementById("preview-character-name").value =
+        dialogue.character;
+      document.getElementById("preview-dialogue-text").value = dialogue.text;
+      playCurrentDialogueAudio();
+    }
+  }
+
+  function nextDialogue() {
+    if (previewMode) {
+      if (currentDialogueIndex < dialogues.length - 1) {
+        currentDialogueIndex++;
+        displayCurrentDialogue();
+      } else {
+        alert("End of scene.");
+        resetDialogueBox();
+        currentDialogueIndex = 0;
+        previewMode = false;
+        document.getElementById("menu").style.display = "flex";
+        stopBackgroundAudio();
+      }
     }
   }
 }
@@ -239,25 +339,60 @@ function closeDialogueBox() {
   document.getElementById("menu").style.display = "flex";
 }
 
-const selectElement = document.getElementById("outfit-select");
-for (let i = 0; i < 10; i++) {
-  const option = document.createElement("option");
-  option.value = i; // You can set a value that corresponds to each number (or any other attribute you need)
-  option.textContent = `Outfit ${i}`; // Display text as "Option 0", "Option 1", etc.
-  selectElement.appendChild(option);
+// const selectElement = document.getElementById("outfit-select");
+// for (let i = 0; i < 10; i++) {
+//   const option = document.createElement("option");
+//   option.value = i; // You can set a value that corresponds to each number (or any other attribute you need)
+//   option.textContent = `Outfit ${i}`; // Display text as "Option 0", "Option 1", etc.
+//   selectElement.appendChild(option);
+//   document.getElementById("dialogue-box").style.display = "none";
+//   previewMode = false;
+//   document.getElementById("menu").style.display = "flex";
+//   stopBackgroundAudio();
+// }
+
+function addBackgroundAudioFile() {
+  document.getElementById("background-audio-input").click();
 }
 
-selectElement.addEventListener("change", function () {
-  let index = parseInt(selectElement.value, 10);
-  const characterName =
-    document.getElementById("character-select").selectedOptions[0].textContent;
-  console.log(characterName);
+function setBackgroundAudio(input) {
+  const file = input.files[0];
+  if (file) {
+    if (backgroundAudio) {
+      backgroundAudio.pause();
+      backgroundAudio = null;
+    }
+    backgroundAudio = new Audio(URL.createObjectURL(file));
+    backgroundAudio.loop = true;
+  }
+}
 
-  console.log(characters);
-  let character = characters.find((character) => {
-    return character.name === characterName;
-  });
+function startBackgroundAudio() {
+  if (backgroundAudio) {
+    backgroundAudio.play();
+  }
+}
 
-  console.log(character);
-  character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
-});
+function stopBackgroundAudio() {
+  if (backgroundAudio) {
+    backgroundAudio.pause();
+    backgroundAudio.currentTime = 0;
+  }
+}
+
+function addCustomBackground() {
+  document.getElementById("custom-background-input").click();
+}
+
+function setCustomBackground(input) {
+  const file = input.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector(".preview").style.backgroundImage =
+        `url(${e.target.result})`;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+

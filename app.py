@@ -29,8 +29,7 @@ def index():
                            backgrounds=images['backgrounds'],
                            characters=images['characters'],
                            selected_background=selected_background,
-                           selected_character=selected_character,
-                           image_counts=image_counts)
+                           selected_character=selected_character)
 
 
 if __name__ == "__main__":
