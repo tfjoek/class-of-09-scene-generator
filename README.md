@@ -47,12 +47,10 @@ if something you see here thats missing for a cool feature tell me
 ### todo currently / easiest
 - all characters/backgrounds from all 3 games including every clothing/expression option
 
-- add ur own bgm/sound effects / ur own voicelines or whatever for each dialogue
-- add ur own background/character sprite
+- add ur own character sprite
 - make a custom option for dialogue choice (offscreen character)
 - modify character size (useful for custom sprite)
 - moving characters during scene (like after/before a dialogue plays u can animate the character to move)
-- fix clothes being flipped so they dont reverse (would need 2 different sprites for each cloth)
   
 ### highest priority need helplol
 - make site responsive (imposible challenge)
