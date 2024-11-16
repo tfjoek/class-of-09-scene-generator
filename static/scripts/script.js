@@ -75,16 +75,9 @@ function updatePlacementControls() {
       option.textContent = `Outfit ${i}`;
       selectElement.appendChild(option);
     }
+
     selectElement.addEventListener("change", function () {
       let index = parseInt(selectElement.value, 10);
-      const characterName =
-        document.getElementById("character-select").selectedOptions[0]
-          .textContent;
-
-      let character = characters.find((character) => {
-        return character.name === characterName;
-      });
-
       character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
     });
     container.appendChild(sliderContainer);
