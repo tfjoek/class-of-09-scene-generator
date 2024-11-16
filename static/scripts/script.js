@@ -2,6 +2,7 @@ let dialogues = [];
 let currentDialogueIndex = 0;
 let characters = [];
 let previewMode = false;
+let backgroundAudio = null;
 
 function updateBackground(background) {
     document.querySelector(".preview").style.backgroundImage = `url('/static/backgrounds/${background}')`;
@@ -57,7 +58,6 @@ function updatePlacementControls() {
     });
 }
 
-
 function moveCharacter(index, value) {
     characters[index].element.style.left = `${value}%`;
 }
@@ -79,7 +79,6 @@ function removeCharacter(index) {
     updatePlacementControls(); 
 }
 
-
 function toggleDialogueCreator() {
     closeAllMenus();
     const creator = document.getElementById("dialogue-creator");
@@ -92,7 +91,8 @@ function addDialogue() {
     const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
 
     if (text) {
-        dialogues.push({ character: characterName, characterFile, text });
+        const dialogue = { character: characterName, characterFile, text, audioFile: null };
+        dialogues.push(dialogue);
         updateDialogueList();
         document.getElementById("dialogue-input").value = '';
     }
@@ -119,6 +119,9 @@ function updateDialogueList() {
                 `).join('')}
             </select>
             <button class="button-style" onclick="deleteDialogue(${index})">Delete</button>
+            <button class="button-style" onclick="addVoiceLineOption(${index})">
+                ${dialogue.audioFile ? dialogue.audioFile.name : 'Voiceline'}
+            </button>
         `;
         list.appendChild(item);
     });
@@ -129,6 +132,23 @@ function deleteDialogue(index) {
     updateDialogueList();
 }
 
+function addVoiceLineOption(index) {
+    const audioInput = document.createElement('input');
+    audioInput.type = 'file';
+    audioInput.accept = 'audio/*';
+    audioInput.onchange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            dialogues[index].audioFile = {
+                url: URL.createObjectURL(file),
+                name: file.name
+            };
+            updateDialogueList(); // Refresh to display the correct file name
+        }
+    };
+    audioInput.click();
+}
+
 function startScenePreview() {
     if (dialogues.length > 0) {
         currentDialogueIndex = 0;
@@ -137,15 +157,27 @@ function startScenePreview() {
         document.getElementById("dialogue-creator").style.display = "none";
         document.getElementById("menu").style.display = "none";
         previewMode = true;
+        startBackgroundAudio();
     } else {
         resetDialogueBox();
     }
 }
 
-function displayCurrentDialogue() {
+function playCurrentDialogueAudio() {
     const dialogue = dialogues[currentDialogueIndex];
-    document.getElementById("preview-character-name").value = dialogue.character;
-    document.getElementById("preview-dialogue-text").value = dialogue.text;
+    if (dialogue.audioFile && dialogue.audioFile.url) {
+        const audio = new Audio(dialogue.audioFile.url);
+        audio.play();
+    }
+}
+
+function displayCurrentDialogue() {
+    if (dialogues.length > 0 && currentDialogueIndex < dialogues.length) {
+        const dialogue = dialogues[currentDialogueIndex];
+        document.getElementById("preview-character-name").value = dialogue.character;
+        document.getElementById("preview-dialogue-text").value = dialogue.text;
+        playCurrentDialogueAudio();
+    }
 }
 
 function nextDialogue() {
@@ -159,6 +191,7 @@ function nextDialogue() {
             currentDialogueIndex = 0;
             previewMode = false;
             document.getElementById("menu").style.display = "flex";
+            stopBackgroundAudio();
         }
     }
 }
@@ -178,4 +211,49 @@ function closeDialogueBox() {
     document.getElementById("dialogue-box").style.display = "none";
     previewMode = false;
     document.getElementById("menu").style.display = "flex";
+    stopBackgroundAudio();
+}
+
+function addBackgroundAudioFile() {
+    document.getElementById("background-audio-input").click();
+}
+
+function setBackgroundAudio(input) {
+    const file = input.files[0];
+    if (file) {
+        if (backgroundAudio) {
+            backgroundAudio.pause();
+            backgroundAudio = null;
+        }
+        backgroundAudio = new Audio(URL.createObjectURL(file));
+        backgroundAudio.loop = true;
+    }
+}
+
+function startBackgroundAudio() {
+    if (backgroundAudio) {
+        backgroundAudio.play();
+    }
+}
+
+function stopBackgroundAudio() {
+    if (backgroundAudio) {
+        backgroundAudio.pause();
+        backgroundAudio.currentTime = 0;
+    }
+}
+
+function addCustomBackground() {
+    document.getElementById("custom-background-input").click();
+}
+
+function setCustomBackground(input) {
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.querySelector(".preview").style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
 }

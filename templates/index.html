@@ -17,7 +17,8 @@
                     <option value="{{ bg.file }}">{{ bg.name }}</option>
                 {% endfor %}
             </select>
-            
+            <button class="button-style" onclick="addCustomBackground()">Custom Background</button>
+<input type="file" id="custom-background-input" accept="image/*" style="display: none;" onchange="setCustomBackground(this)">
             
             <label for="character">Character:</label>
             <select id="character-select">
@@ -25,13 +26,13 @@
                     <option value="{{ char.file }}">{{ char.name }}</option>
                 {% endfor %}
             </select>
-            
-            
 
             <button class="button-style" onclick="addCharacter()">Add Character</button>
-            <button class="button-style" onclick="togglePlacementEditor()">Placement</button>
+            <button class="button-style" onclick="togglePlacementEditor()">Character Editor</button>
             <button class="button-style" onclick="toggleDialogueCreator()">Dialogue</button>
+            <button class="button-style" onclick="addBackgroundAudioFile()">Background Audio</button>
             <button class="button-style" onclick="startScenePreview()">Start Scene</button>
+            <input type="file" id="background-audio-input" accept="audio/*" style="display: none;" onchange="setBackgroundAudio(this)">
         </div>
 
         <!-- Placement Editor Section -->
@@ -41,26 +42,21 @@
             <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
         </div>
         
-        
-
         <!-- Dialogue Creator Section -->
-<!-- Dialogue Creator Section -->
-<div id="dialogue-creator" style="display: none;">
-    <h3>Add Dialogue</h3>
-    <div id="dialogue-list"></div>
-    <input type="text" id="dialogue-input" placeholder="Enter dialogue..." style="width: 80%;">
-    <button class="button-style" onclick="addDialogue()">Add Dialogue</button>
-    <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
-</div>
+        <div id="dialogue-creator" style="display: none;">
+            <h3>Add Dialogue</h3>
+            <div id="dialogue-list"></div>
+            <input type="text" id="dialogue-input" placeholder="Enter dialogue..." style="width: 80%;">
+            <button class="button-style" onclick="addDialogue()">Add Dialogue</button>
+            <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
+        </div>
 
-
+        <!-- Dialogue Box -->
         <div class="dialogue-box" id="dialogue-box">
             <input type="text" class="character-name-input" id="preview-character-name" readonly placeholder="Character Name">
             <textarea class="dialogue-input" id="preview-dialogue-text" readonly placeholder="Dialogue text"></textarea>
-           
         </div>
-        
-    
+    </div>
 
     <!-- Link to external JavaScript file -->
     <script src="/static/scripts/script.js"></script>
