@@ -2,7 +2,6 @@ let dialogues = [];
 let currentDialogueIndex = 0;
 let characters = [];
 let previewMode = false;
-let image_counts = [];
 let backgroundAudio = null;
 
 function updateBackground(background) {
@@ -32,39 +31,10 @@ function addCharacter() {
       element: img,
       image: 1,
     };
-    console.log(character);
     characters.push(character);
-    // pickOutfit(character);
     updatePlacementControls();
   }
 }
-
-// function pickOutfit(character) {
-//   const characterName = document
-//     .getElementById("character-select")
-//     .selectedOptions[0].textContent.toLowerCase();
-//   // Create the select element
-//   const selectElement = document.createElement("select");
-//   selectElement.id = "outfitSelect";
-
-//   // Create options (0-9) and add them to the select element
-//   for (let i = 0; i < 10; i++) {
-//     const option = document.createElement("option");
-//     option.value = i; // Set the option's value to i
-//     option.textContent = `Outfit ${i}`; // Option text (Outfit 0, Outfit 1, etc.)
-//     selectElement.appendChild(option);
-//   }
-
-//   // Append the select element to the container
-//   const container = document.getElementById("outfit-container");
-//   container.appendChild(selectElement);
-
-//   // Add an event listener to update character's index when selection changes
-//   selectElement.addEventListener("change", function () {
-//     character.index = parseInt(selectElement.value, 10);
-//     character.element.src = `/static/characters/${character.name.toLowerCase()}/${character.index}.png`;
-//   });
-// }
 
 function closeAllMenus() {
   document.getElementById("placement-editor").style.display = "none";
@@ -92,17 +62,17 @@ function updatePlacementControls() {
             <label for="flip-${index}">Flip</label>
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
             <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
-						<select id="select for ${index}"></select>
+						<select id="select for ${index}", class="select-outfit"></select>
         `;
-    // HERE
-    // selectElement = sliderContainer.querySelector()
+
     const selectElement = sliderContainer.querySelector(
       `select[id="select for ${index}"]`,
     );
-    for (let i = 0; i < 10; i++) {
+
+    for (let i = 1; i <= image_counts[character.name.toLowerCase()]; i++) {
       const option = document.createElement("option");
-      option.value = i; // You can set a value that corresponds to each number (or any other attribute you need)
-      option.textContent = `Outfit ${i}`; // Display text as "Option 0", "Option 1", etc.
+      option.value = i;
+      option.textContent = `Outfit ${i}`;
       selectElement.appendChild(option);
     }
     selectElement.addEventListener("change", function () {
@@ -110,14 +80,11 @@ function updatePlacementControls() {
       const characterName =
         document.getElementById("character-select").selectedOptions[0]
           .textContent;
-      console.log(characterName);
 
-      console.log(characters);
       let character = characters.find((character) => {
         return character.name === characterName;
       });
 
-      console.log(character);
       character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
     });
     container.appendChild(sliderContainer);
@@ -338,18 +305,6 @@ function closeDialogueBox() {
   previewMode = false;
   document.getElementById("menu").style.display = "flex";
 }
-
-// const selectElement = document.getElementById("outfit-select");
-// for (let i = 0; i < 10; i++) {
-//   const option = document.createElement("option");
-//   option.value = i; // You can set a value that corresponds to each number (or any other attribute you need)
-//   option.textContent = `Outfit ${i}`; // Display text as "Option 0", "Option 1", etc.
-//   selectElement.appendChild(option);
-//   document.getElementById("dialogue-box").style.display = "none";
-//   previewMode = false;
-//   document.getElementById("menu").style.display = "flex";
-//   stopBackgroundAudio();
-// }
 
 function addBackgroundAudioFile() {
   document.getElementById("background-audio-input").click();

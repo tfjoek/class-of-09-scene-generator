@@ -39,15 +39,8 @@
           {% endfor %}
         </select>
 
-        <button class="button-style" onclick="addCharacter()">
-          Add Character
-        </button>
         <div id="outfit-container"></div>
-        <!-- This is where the select dropdown will be added -->
-
-        <button class="button-style" onclick="togglePlacementEditor()">
-          Placement
-        </button>
+        <!k- This is where the select dropdown will be added -->
 
         <button class="button-style" onclick="addCharacter()">
           Add Character
@@ -119,6 +112,10 @@
     </div>
 
     <!-- Link to external JavaScript file -->
+    <script>
+      // Convert the Python list to a JSON string and embed it in the page
+      const image_counts = {{ image_counts | tojson | safe }};
+    </script>
     <script src="/static/scripts/script.js"></script>
   </body>
 </html>
