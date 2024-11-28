@@ -50,47 +50,70 @@ function togglePlacementEditor() {
 function updatePlacementControls() {
     const container = document.getElementById("placement-controls");
     container.innerHTML = "";
+
     characters.forEach((character, index) => {
         const sliderContainer = document.createElement("div");
         sliderContainer.classList.add("slider-container");
+
         sliderContainer.innerHTML = `
             <label>Position for ${character.name}</label>
-            <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}" oninput="moveCharacter(${index}, this.value)">
+            <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}"
+                   oninput="moveCharacterHorizontally(${index}, this.value)">
+            <label>Vertical</label>
+            <input type="range" min="0" max="100" value="${parseInt(character.element.style.bottom)}"
+                   oninput="moveCharacterVertically(${index}, this.value)">
+            <label>Scale</label>
+            <input type="range" min="0.5" max="2" step="0.1" value="1"
+                   oninput="scaleCharacter(${index}, this.value)">
             <label for="flip-${index}">Flip</label>
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
             <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
-            <select id="select-for-${index}" class="select-outfit"></select>
+            <div class="outfit-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown(${index})">Outfits</button>
+                <div class="dropdown-content" id="dropdown-outfits-${index}"></div>
+            </div>
         `;
 
-        const selectElement = sliderContainer.querySelector(`#select-for-${index}`);
-
+        const dropdownContent = sliderContainer.querySelector(`#dropdown-outfits-${index}`);
         for (let i = 1; i <= image_counts[character.name.toLowerCase()]; i++) {
-            const option = document.createElement("option");
-            option.value = i;
-            option.textContent = `Outfit ${i}`;
-            selectElement.appendChild(option);
+            const img = document.createElement("img");
+            img.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
+            img.alt = `Outfit ${i}`;
+            img.title = `Outfit ${i}`;
+            img.onclick = function () {
+                character.element.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
+                toggleDropdown(index);
+            };
+            dropdownContent.appendChild(img);
         }
 
-        selectElement.addEventListener("change", function () {
-            let index = parseInt(selectElement.value, 10);
-            character.element.src = `/static/characters/${character.name.toLowerCase()}/${index}.png`;
-        });
         container.appendChild(sliderContainer);
     });
 }
 
-function moveCharacter(index, value) {
+function toggleDropdown(index) {
+    const dropdown = document.getElementById(`dropdown-outfits-${index}`);
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+function moveCharacterHorizontally(index, value) {
     characters[index].element.style.left = `${value}%`;
+}
+
+function moveCharacterVertically(index, value) {
+    characters[index].element.style.bottom = `${value}%`;
+}
+
+function scaleCharacter(index, value) {
+    characters[index].element.style.transform = `scale(${value})`;
 }
 
 function toggleFlip(index) {
     const characterElement = characters[index].element;
     const flipCheckbox = document.getElementById(`flip-${index}`);
-    if (flipCheckbox.checked) {
-        characterElement.style.transform += " scaleX(-1)";
-    } else {
-        characterElement.style.transform = characterElement.style.transform.replace("scaleX(-1)", "");
-    }
+    characterElement.style.transform = flipCheckbox.checked
+        ? `${characterElement.style.transform} scaleX(-1)`
+        : characterElement.style.transform.replace("scaleX(-1)", "");
 }
 
 function removeCharacter(index) {
@@ -112,22 +135,15 @@ function addDialogue() {
     const characterName = document.getElementById("character-select").selectedOptions[0].textContent;
 
     if (text) {
-        const dialogue = {
+        dialogues.push({
             character: characterName,
             characterFile,
             text,
             audioFile: null,
-        };
-        dialogues.push(dialogue);
+        });
         updateDialogueList();
         document.getElementById("dialogue-input").value = "";
     }
-}
-
-function updateCharacterForDialogue(index, characterFile) {
-    const characterName = characters.find((char) => char.file === characterFile).name;
-    dialogues[index].character = characterName;
-    dialogues[index].characterFile = characterFile;
 }
 
 function updateDialogueList() {
@@ -137,14 +153,16 @@ function updateDialogueList() {
     dialogues.forEach((dialogue, index) => {
         const item = document.createElement("div");
         item.className = "dialogue-item";
-        item.innerHTML = `
+
+        let innerHTML = `
             <b>Dialogue:</b> ${dialogue.text}
             <select onchange="updateCharacterForDialogue(${index}, this.value)">
                 ${characters
                     .map(
-                        ({ file, name }) => `
-                    <option value="${file}" ${dialogue.characterFile === file ? "selected" : ""}>${name}</option>
-                `,
+                        ({ file, name }) =>
+                            `<option value="${file}" ${
+                                dialogue.characterFile === file ? "selected" : ""
+                            }>${name}</option>`
                     )
                     .join("")}
             </select>
@@ -153,8 +171,30 @@ function updateDialogueList() {
                 ${dialogue.audioFile ? dialogue.audioFile.name : "Voiceline"}
             </button>
         `;
+
+        if (dialogue.character === "Custom Character") {
+            innerHTML += `
+                <button class="button-style" onclick="changeCharacterName(${index})">Change Name</button>
+            `;
+        }
+
+        item.innerHTML = innerHTML;
         list.appendChild(item);
     });
+}
+
+function changeCharacterName(index) {
+    const newName = prompt("Enter a new name for this custom character:");
+    if (newName) {
+        dialogues[index].character = newName;
+        updateDialogueList();
+    }
+}
+
+function updateCharacterForDialogue(index, characterFile) {
+    const character = characters.find((char) => char.file === characterFile);
+    dialogues[index].character = character.name;
+    dialogues[index].characterFile = characterFile;
 }
 
 function deleteDialogue(index) {
@@ -173,7 +213,7 @@ function addVoiceLineOption(index) {
                 url: URL.createObjectURL(file),
                 name: file.name,
             };
-            updateDialogueList(); // Refresh to display the correct file name
+            updateDialogueList();
         }
     };
     audioInput.click();
@@ -282,4 +322,40 @@ function setCustomBackground(input) {
         };
         reader.readAsDataURL(file);
     }
+}
+
+function addCustomCharacter() {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.style.display = "none";
+
+    fileInput.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.classList.add("character-display");
+                img.style.position = "absolute";
+                img.style.bottom = "0%";
+                img.style.left = `${10 + characters.length * 20}%`;
+                img.style.transform = "translateX(-50%)";
+                document.querySelector(".preview").appendChild(img);
+
+                let character = {
+                    file: file.name,
+                    name: "Custom Character",
+                    element: img,
+                    image: 1,
+                };
+                characters.push(character);
+                updatePlacementControls();
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    fileInput.click();
 }
