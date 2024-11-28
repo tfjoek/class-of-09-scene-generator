@@ -14,7 +14,7 @@
 
 # [link to the tool online click me!](https://givememoneyplease.xyz)
 # ⚠️ README BEFORE USING
-# NO MOBILE SUPPORT ALSO IF IT LOOKS FUCKED UP JUST TRY ZOOMING IN/OUT ON THE SITE TILL IT LOOKS GOOD WORKS FOR ME ON MY LAPTOP.
+# NO MOBILE SUPPORT ALSO IF IT LOOKS FUCKED UP JUST TRY ZOOMING IN/OUT ON THE SITE TILL IT LOOKS LIKE IN THE IMAGE WORKS FOR ME ON MY LAPTOP.
 ## THIS VERSION IS CURRENTLY IN _ALPHA_ also please star this repo<br> and im a silly student so i cant work on this 24/7 sorry if i dont respond
 
 
