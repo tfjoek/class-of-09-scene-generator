@@ -8,7 +8,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/issues)
 [![GitHub license](https://img.shields.io/github/license/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/blob/main/LICENSE)
 <br>
-![SITE PREVIEW](https://i.imgur.com/EgbZrMC.jpeg)
+![SITE PREVIEW](https://i.ibb.co/ZdDf0nX/kuva.png)
 
 
 
