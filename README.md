@@ -1,7 +1,7 @@
 <img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="250">
 
 
-> an interactive tool to create custom scenes with character placements, dialogues, voicelines/bgm and backgrounds!
+> an interactive tool to create custom scenes with a plethora of feautres like character placements, dialogues, voicelines, and backgrounds! (alot more to come)
 
 [![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)
@@ -14,12 +14,11 @@
 
 # [link to the tool online click me!](https://givememoneyplease.xyz)
 # ⚠️ README BEFORE USING
-# NO MOBILE SUPPORT ALSO IF IT LOOKS FUCKED UP JUST TRY ZOOMING IN/OUT ON THE SITE TILL IT LOOKS LIKE IN THE IMAGE WORKS FOR ME ON MY LAPTOP.
-## THIS VERSION IS CURRENTLY IN _ALPHA_ also please star this repo<br> and im a silly student so i cant work on this 24/7 sorry if i dont respond
+# the site does NOT support mobile devices at all and isnt responsive  <br>and if you are using a smaller screen like laptop and it looks fucked up, <br>please try zooming in/out  on  the website to potentially fix  it!
 
 
 
-## 📦 Local Setup 
+## 📦 local setup 
 
 
 
@@ -29,47 +28,45 @@
    pip install -r requirements.txt
    python app.py
    ```
-!!! theres some random ass stuff like geopy in the requirements for some reaason so my bad !!!
+theres some random stuff like geopy from my other shitty projects so my bad
 
 
-## 💬 Contributing/Bugs
+## 💬 contributing / bugs & features
 
-feel free to fork this and do anything on the feature/todo list or just literally anything else you want
+feel free to fork this and do anything on the feature/todo list or just literally anything else you want 
 
-if you have any suggestions / bugreports you can make an issue or just dm me on discord (tfjoek)
+if you have any suggestions / bugreports you can just make an issue on legit anything 
 
-i will work on this when i have time (im procrastinating all school work im cooked)
+## 🔧 todo/major feautres
 
-## 🔧 Features/TODO
 
-if something you see here thats missing for a cool feature tell me
-
-### todo currently / easiest
-- all characters/backgrounds from all 3 games including every clothing/expression option (see issue)
+### todo currently
+- all characters/backgrounds from all 3 games including every clothing/expression option<br> (characters currently only the flipside afaik)
 - make a custom option for dialogue choice (offscreen character)
-- moving characters during scene (like after/before a dialogue plays u can animate the character to move u get me yeah)
+- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
+- changing background in scene (like kylar roof thing)
+- 
   
-### highest priority need helplol
-- make site responsive (imposible challenge)
 
   
-### major features later
-- saving/exporting scenes (many different solutions available for this)
-
-- a choice generator that you can use in the middle of ur scene
+### more major features 
+- saving/exporting scenes (kinda advanced maybe idk)
+- a choice generator that would affect the dialogue played
 - an ending generator that you can use in the end of ur scene
-- mobile support
+- mobile support and general responsibility
 
 
-### boring code stuff
-- move to react  so this shit isnt awful to develop
-- i need to start commenting LOL
+### code related
+- move to react probably (i just made this in javascript to get memory refreshed)
+- use something better than anything rightnow lol
 
 
+## 📞 contact 
+if u need to for some reason <br>
+discord: tfjoek
 
 
-
-## 📜 bla bla bla
+## 📜 license & copyright 
 
 
 This project is licensed under the Apache-2.0 license. 
