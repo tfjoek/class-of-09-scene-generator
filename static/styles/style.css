@@ -64,6 +64,26 @@ label[for="background"] {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+/* Background Dropdown Thumbnails */
+#background {
+  font-size: 18px;
+  font-family: "CM Handwriting One", sans-serif;
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#background img {
+  width: 80px; /* Thumbnail width */
+  height: 50px; /* Thumbnail height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px;
+}
+
 
 .button-style:hover {
   background-color: #444;
@@ -358,6 +378,60 @@ select {
 }
 
 .select-outfit {
-  margin-top: 10px;
+  margin-top: 10px; 
+}
+
+/* Outfit Thumbnails */
+.outfit-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: "CM Handwriting One", sans-serif;
+  border-radius: 4px;
+  position: relative; /* Ensure proper positioning */
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position it relative to the parent */
+  background-color: white;
+  min-width: 220px; /* Adjust width for thumbnails */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  z-index: 999; /* Ensure it appears above all else */
+  padding: 10px;
+  border-radius: 5px;
+  overflow-y: auto; /* Add scroll if the content is too long */
+  max-height: 300px; /* Prevent it from growing too large */
+}
+
+/* Thumbnails */
+.dropdown-content img {
+  width: 80px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px; /* Add spacing between thumbnails */
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+}
+
+.dropdown-content img:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
+/* Show dropdown on button hover */
+.outfit-dropdown:hover .dropdown-content {
+  display: block; /* Display dropdown */
 }
 

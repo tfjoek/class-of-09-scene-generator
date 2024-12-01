@@ -21,9 +21,7 @@
           {% endfor %}
         </select>
 
-        <button class="button-style" onclick="addCustomBackground()">
-          Custom Background
-        </button>
+        <button class="button-style" onclick="addCustomBackground()">Custom Background</button>
         <input
           type="file"
           id="custom-background-input"
@@ -38,25 +36,12 @@
           <option value="{{ char.file }}">{{ char.name }}</option>
           {% endfor %}
         </select>
-
-        <div id="outfit-container"></div>
-        <!-- This is where the select dropdown will be added -->
-
-        <button class="button-style" onclick="addCharacter()">
-          Add Character
-        </button>
-        <button class="button-style" onclick="togglePlacementEditor()">
-          Character Editor
-        </button>
-        <button class="button-style" onclick="toggleDialogueCreator()">
-          Dialogue
-        </button>
-        <button class="button-style" onclick="addBackgroundAudioFile()">
-          Background Audio
-        </button>
-        <button class="button-style" onclick="startScenePreview()">
-          Start Scene
-        </button>
+        <button class="button-style" onclick="addCharacter()">Add Character</button>
+        <button class="button-style" onclick="addCustomCharacter()">Custom Character</button>
+        <button class="button-style" onclick="togglePlacementEditor()">Character Editor</button>
+        <button class="button-style" onclick="toggleDialogueCreator()">Dialogue</button>
+        <button class="button-style" onclick="addBackgroundAudioFile()">Background Audio</button>
+        <button class="button-style" onclick="startScenePreview()">Start Scene</button>
         <input
           type="file"
           id="background-audio-input"
@@ -70,27 +55,16 @@
       <div id="placement-editor" style="display: none">
         <h3>Character Placement</h3>
         <div id="placement-controls"></div>
-        <button class="button-style close-button" onclick="closeAllMenus()">
-          Close
-        </button>
+        <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
       </div>
 
       <!-- Dialogue Creator Section -->
       <div id="dialogue-creator" style="display: none">
         <h3>Add Dialogue</h3>
         <div id="dialogue-list"></div>
-        <input
-          type="text"
-          id="dialogue-input"
-          placeholder="Enter dialogue..."
-          style="width: 80%"
-        />
-        <button class="button-style" onclick="addDialogue()">
-          Add Dialogue
-        </button>
-        <button class="button-style close-button" onclick="closeAllMenus()">
-          Close
-        </button>
+        <input type="text" id="dialogue-input" placeholder="Enter dialogue..." style="width: 80%" />
+        <button class="button-style" onclick="addDialogue()">Add Dialogue</button>
+        <button class="button-style close-button" onclick="closeAllMenus()">Close</button>
       </div>
 
       <!-- Dialogue Box -->
@@ -110,10 +84,8 @@
         ></textarea>
       </div>
     </div>
-
     <!-- Link to external JavaScript file -->
     <script>
-      // Convert the Python list to a JSON string and embed it in the page
       const image_counts = {{ image_counts | tojson | safe }};
     </script>
     <script src="/static/scripts/script.js"></script>
