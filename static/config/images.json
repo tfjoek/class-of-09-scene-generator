@@ -39,26 +39,27 @@
     {"file": "school_int_1.jpg", "name": "School Interior 1"},
     {"file": "school_int_2.jpg", "name": "School Interior 2"}
   ],
-    "characters": [
-        {"file": "girl_1.png", "name": "Ari"},
-        {"file": "girl_2_color2.png", "name": "Emily"},
-        {"file": "girl_3.png", "name": "Megan"},
-        {"file": "girl_4.png", "name": "Karen"},
-        {"file": "girl_5_color2.png", "name": "Kelly"},
-        {"file": "guy_1.png", "name": "Trody"},
-        {"file": "guy_2_color2.png", "name": "Kyle"},
-        {"file": "guy_4_gym.png", "name": "Braxton"},
-        {"file": "teacher_1.png", "name": "Mr. Burleday"},
-        {"file": "teacher_2.png", "name": "Mr. Katz"},
-        {"file": "coach_2.png", "name": "Coach"},
-        {"file": "couns_2.png", "name": "Counselor"},
-        {"file": "crispin_sc5.png", "name": "Crispin"},
-        {"file": "jecka_1.png", "name": "Jecka"},
-        {"file": "jeffery_1.png", "name": "Jeffery"},
-        {"file": "kylar_sc2.png", "name": "Kylar"},
-        {"file": "lawyer.png", "name": "Lawyer"},
-        {"file": "lynn_shirt.png", "name": "Lynn"},
-        {"file": "mom_2.png", "name": "Mom"},
-        {"file": "nicole_1.png", "name": "Nicole"}
-      ]
+"characters": [
+    {"file": "girl_1.png", "name": "Ari"},
+    {"file": "guy_4_gym.png", "name": "Braxton"},
+    {"file": "coach_2.png", "name": "Coach"},
+    {"file": "couns_2.png", "name": "Counselor"},
+    {"file": "crispin_sc5.png", "name": "Crispin"},
+    {"file": "girl_2_color2.png", "name": "Emily"},
+    {"file": "jecka_1.png", "name": "Jecka"},
+    {"file": "jeffery_1.png", "name": "Jeffery"},
+    {"file": "girl_4.png", "name": "Karen"},
+    {"file": "girl_5_color2.png", "name": "Kelly"},
+    {"file": "guy_2_color2.png", "name": "Kyle"},
+    {"file": "kylar_sc2.png", "name": "Kylar"},
+    {"file": "lawyer.png", "name": "Lawyer"},
+    {"file": "lynn_shirt.png", "name": "Lynn"},
+    {"file": "girl_3.png", "name": "Megan"},
+    {"file": "mom_2.png", "name": "Mom"},
+    {"file": "teacher_1.png", "name": "Mr. Burleday"},
+    {"file": "teacher_2.png", "name": "Mr. Katz"},
+    {"file": "nicole_1.png", "name": "Nicole"},
+    {"file": "guy_1.png", "name": "Trody"}
+]
+
     }
