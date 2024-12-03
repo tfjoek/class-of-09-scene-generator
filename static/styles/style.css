@@ -64,7 +64,7 @@ label[for="background"] {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-/* Background Dropdown Thumbnails */
+
 #background {
   font-size: 18px;
   font-family: "CM Handwriting One", sans-serif;
@@ -77,13 +77,12 @@ label[for="background"] {
 }
 
 #background img {
-  width: 80px; /* Thumbnail width */
-  height: 50px; /* Thumbnail height */
-  object-fit: cover; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners */
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
   margin-right: 10px;
 }
-
 
 .button-style:hover {
   background-color: #444;
@@ -381,13 +380,11 @@ select {
   margin-top: 10px; 
 }
 
-/* Outfit Thumbnails */
 .outfit-dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Button */
 .dropdown-btn {
   background-color: #333;
   color: white;
@@ -397,41 +394,37 @@ select {
   cursor: pointer;
   font-family: "CM Handwriting One", sans-serif;
   border-radius: 4px;
-  position: relative; /* Ensure proper positioning */
-  z-index: 10; /* Ensure it stays above other elements */
+  position: relative;
+  z-index: 10;
 }
 
-/* Dropdown Content */
 .dropdown-content {
-  display: none; /* Hidden by default */
-  position: absolute; /* Position it relative to the parent */
+  display: none;
+  position: absolute;
   background-color: white;
-  min-width: 400px; /* Adjust width for thumbnails */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-  z-index: 999; /* Ensure it appears above all else */
+  min-width: 400px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
   padding: 10px;
   border-radius: 5px;
-  overflow-y: auto; /* Add scroll if the content is too long */
-  max-height: 400px; /* Prevent it from growing too large */
+  overflow-y: auto;
+  max-height: 400px;
 }
 
-/* Thumbnails */
 .dropdown-content img {
-  width: 120px; /* Adjust width */
-  height: auto; /* Maintain aspect ratio */
-  margin: 10px; /* Add spacing between thumbnails */
+  width: 120px;
+  height: auto;
+  margin: 10px;
   cursor: pointer;
   border-radius: 4px;
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .dropdown-content img:hover {
-  transform: scale(1.2); /* Slight zoom on hover */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+  transform: scale(1.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Show dropdown on button hover */
 .outfit-dropdown:hover .dropdown-content {
-  display: block; /* Display dropdown */
+  display: block;
 }
-
