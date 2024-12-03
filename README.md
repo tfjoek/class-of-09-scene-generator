@@ -46,6 +46,7 @@ if you have any suggestions / bugreports you can just make an issue on legit any
 - make a custom option for dialogue choice (offscreen character)
 - moving characters during scene (like after/before a dialogue plays u can animate the character to move)
 - changing background in scene (like kylar roof thing)
+- add a help/info button and also link to github 
 - uhh i forgot in the middle of writing this 
   
 
