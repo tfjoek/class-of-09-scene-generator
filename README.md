@@ -42,6 +42,7 @@ if you have any suggestions / bugreports you can just make an issue on legit any
 
 ### todo currently
 - all characters/backgrounds from all 3 games including every clothing/expression option<br> (characters currently only the flipside afaik)
+- allow changing expression during dialogue 
 - make a custom option for dialogue choice (offscreen character)
 - moving characters during scene (like after/before a dialogue plays u can animate the character to move)
 - changing background in scene (like kylar roof thing)
