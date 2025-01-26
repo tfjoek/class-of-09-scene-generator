@@ -1,6 +1,7 @@
-<img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" style="width: 100%; max-width: 500px; height: auto;">
+<img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="500" height="500">
 
-> An interactive tool for creating custom scenes with various features, such as character placements, dialogues, voice lines, and backgrounds. More features are planned for future updates.
+
+> an interactive tool to create custom scenes with a plethora of feautres like character placements, dialogues, voicelines, and backgrounds! (alot more to come)
 
 [![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)
@@ -21,12 +22,14 @@
 
 
 
-   ```
-   git clone https://github.com/tfjoek/class-of-09-scene-generator.git
+   
+
+git clone https://github.com/tfjoek/class-of-09-scene-generator.git
    cd class-of-09-scene-generator
    pip install -r requirements.txt
    python app.py
-   ```
+
+
 theres some random stuff like geopy from my other shitty projects so my bad
 
 
@@ -73,5 +76,3 @@ discord: tfjoek
 This project is licensed under the Apache-2.0 license. 
 
 All rights to original 'Class of '09' content and assets belong to the original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
-
-
