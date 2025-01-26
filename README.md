@@ -14,8 +14,8 @@
 
 # [link to the tool online click me! AFTER READING](https://givememoneyplease.xyz)
 # ⚠️ READ ME BEFORE USING PLEASE
-# the site does NOT support mobile devices at all and isnt responsive  <br>and if you are using a smaller screen like laptop and it looks fucked up, <br>please try zooming in/out  on  the website to potentially fix any resolution/stretching issues!<br>its missing alot of clothes/characters and features it it NOT complete all<br>
-### i create this on my free time during my studies so dont expect super frequent updates :(<br>the tool itself is self explanatory just click on stuff<br>ok go ahead now :)
+# the site does NOT support mobile devices at all and isnt responsive  <br>and if you are using a smaller screen like laptop and it looks messed up, <br>please try zooming in/out  on  the website to potentially fix any resolution/stretching issues!<br>its missing alot of features it it NOT complete<br>
+
 
 
 ## 📦 local setup 
