@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="250">
+<img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="500">
 
 
 > an interactive tool to create custom scenes with a plethora of feautres like character placements, dialogues, voicelines, and backgrounds! (alot more to come)
