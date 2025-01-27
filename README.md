@@ -1,5 +1,4 @@
-<img src="https://i.ibb.co/wdDRbPm/imffffage-psd.png" alt="LOGO" width="500" height="500">
-
+logo image not displaying
 
 > an interactive tool to create custom scenes with a plethora of feautres like character placements, dialogues, voicelines, and backgrounds! (alot more to come)
 
@@ -8,8 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/issues)
 [![GitHub license](https://img.shields.io/github/license/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/blob/main/LICENSE)
 <br>
-![SITE PREVIEW](https://i.ibb.co/FnFLG15/image.png)
 
+site preview image also not displaying i will fix at some point 
 
 
 # [link to the tool online click me! AFTER READING](https://givememoneyplease.xyz)
