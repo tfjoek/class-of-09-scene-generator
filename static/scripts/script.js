@@ -72,6 +72,7 @@ function updatePlacementControls() {
 
         sliderContainer.innerHTML = `
             <label>${character.name}</label>
+                  <label>Horizontal</label>
             <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}"
                    oninput="moveCharacterHorizontally(${index}, this.value)">
             <label>Vertical</label>
