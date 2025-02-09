@@ -8,6 +8,8 @@
 
 ## 🔗 [Link to the Tool](https://givememoneyplease.xyz)
 
+![Preview of the site](https://i.ibb.co/xK7zBMwK/image.png)
+
 ### ⚠️ Read Before Using!
 - **The site does NOT support mobile devices** and is not responsive.
 - If you're using a **smaller screen (like a laptop)** and things look messed up, try **zooming in/out** to fix resolution/stretching issues.
