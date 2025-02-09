@@ -71,7 +71,7 @@ function updatePlacementControls() {
             : `<button class="dropdown-btn" onclick="toggleDropdown(${index})">Outfits</button>`;
 
         sliderContainer.innerHTML = `
-            <label>Position for ${character.name}</label>
+            <label>${character.name}</label>
             <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}"
                    oninput="moveCharacterHorizontally(${index}, this.value)">
             <label>Vertical</label>
