@@ -1,4 +1,6 @@
-![Class of '09 Scene Generator](https://i.ibb.co/qLvQJ5G2/image-psd.png)
+<p align="center">
+  <img src="https://i.ibb.co/qLvQJ5G2/image-psd.png" width="30%" alt="Class of '09 Scene Generator">
+</p>
 
 > An interactive tool to create custom scenes with a plethora of features like character placements, dialogues, voice lines, and backgrounds! (A lot more to come)
 
