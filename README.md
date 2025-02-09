@@ -75,4 +75,4 @@ This project is licensed under the Apache-2.0 license.
 
 All rights to the original 'Class of '09' content and assets belong to their original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
 
-## shoutout to chatgpt for rewriting my readme
+## hello employer hire me plz
