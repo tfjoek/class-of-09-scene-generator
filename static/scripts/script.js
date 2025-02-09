@@ -55,6 +55,21 @@ function updatePlacementControls() {
         const sliderContainer = document.createElement("div");
         sliderContainer.classList.add("slider-container");
 
+        // Ensure custom characters always stay custom (even after renaming)
+        if (character.isCustom === undefined) {
+            character.isCustom = character.name.toLowerCase() === "custom character";
+        }
+
+        // Rename button (always appears for custom characters)
+        let renameButton = character.isCustom
+            ? `<button class="button-style" onclick="renameCharacter(${index})">Rename</button>`
+            : "";
+
+        // Outfits button (hidden for custom characters)
+        let outfitsButton = character.isCustom
+            ? ""  // Hide outfits button for custom characters
+            : `<button class="dropdown-btn" onclick="toggleDropdown(${index})">Outfits</button>`;
+
         sliderContainer.innerHTML = `
             <label>Position for ${character.name}</label>
             <input type="range" min="0" max="100" value="${parseInt(character.element.style.left)}"
@@ -69,27 +84,57 @@ function updatePlacementControls() {
             <input type="checkbox" id="flip-${index}" onchange="toggleFlip(${index})">
             <button onclick="removeCharacter(${index})" class="button-style">Delete</button>
             <div class="outfit-dropdown">
-                <button class="dropdown-btn" onclick="toggleDropdown(${index})">Outfits</button>
+                ${outfitsButton}
                 <div class="dropdown-content" id="dropdown-outfits-${index}"></div>
             </div>
+            ${renameButton}
         `;
 
-        const dropdownContent = sliderContainer.querySelector(`#dropdown-outfits-${index}`);
-        for (let i = 1; i <= image_counts[character.name.toLowerCase()]; i++) {
-            const img = document.createElement("img");
-            img.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
-            img.alt = `Outfit ${i}`;
-            img.title = `Outfit ${i}`;
-            img.onclick = function () {
-                character.element.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
-                toggleDropdown(index);
-            };
-            dropdownContent.appendChild(img);
+        if (!character.isCustom) {
+            const dropdownContent = sliderContainer.querySelector(`#dropdown-outfits-${index}`);
+            for (let i = 1; i <= image_counts[character.name.toLowerCase()]; i++) {
+                const img = document.createElement("img");
+                img.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
+                img.alt = `Outfit ${i}`;
+                img.title = `Outfit ${i}`;
+                img.onclick = function () {
+                    character.element.src = `/static/characters/${character.name.toLowerCase()}/${i}.png`;
+                    toggleDropdown(index);
+                };
+                dropdownContent.appendChild(img);
+            }
         }
 
         container.appendChild(sliderContainer);
     });
 }
+
+// Function to rename a character (only for custom characters)
+function renameCharacter(index) {
+    let newName = prompt("Enter a new name for this character:");
+    if (newName) {
+        characters[index].name = newName;
+
+        // Ensure the character remains custom even after renaming
+        characters[index].isCustom = true;
+
+        // Update placement controls to reflect the new name
+        updatePlacementControls();
+    }
+}
+
+
+// Function to rename a character (only for custom characters)
+function renameCharacter(index) {
+    let newName = prompt("Enter a new name for this character:");
+    if (newName) {
+        characters[index].name = newName;
+
+        // Update placement controls to reflect the new name
+        updatePlacementControls();
+    }
+}
+
 
 function toggleDropdown(index) {
     const dropdown = document.getElementById(`dropdown-outfits-${index}`);
@@ -359,3 +404,4 @@ function addCustomCharacter() {
 
     fileInput.click();
 }
+
