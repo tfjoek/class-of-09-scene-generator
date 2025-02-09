@@ -16,6 +16,7 @@
 - **The site does NOT support mobile devices** and is not responsive.
 - If you're using a **smaller screen (like a laptop)** and things look messed up, try **zooming in/out** to fix resolution/stretching issues.
 - **This tool is incomplete** and missing a lot of features.
+- This is not my number one priority so don't expect frequent updates (stupid ass studies)
 
 ---
 
@@ -28,7 +29,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-> There's some random stuff like geopy from my other projects, will update asasp (lazy)
+> Requirements SHOULD be fixed now.
 
 ---
 
