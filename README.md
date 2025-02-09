@@ -6,7 +6,7 @@
 
 ---
 
-## 🔗 [Link to the Tool](https://givememoneyplease.xyz) (READ BEFORE USING BELOW PLEASE)
+## 🔗 [Link to the Tool](https://givememoneyplease.xyz) **(READ BELOW BEFORE USING PLEASE)**
 
 ![Preview of the site](https://i.ibb.co/xK7zBMwK/image.png)
 
