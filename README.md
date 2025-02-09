@@ -26,7 +26,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-> There's some random stuff like geopy from my other projects, my bad.
+> There's some random stuff like geopy from my other projects, will update asasp (lazy)
 
 ---
 
@@ -46,7 +46,7 @@ If you have suggestions or bug reports, open an issue on GitHub.
 - Moving characters during a scene *(e.g., animate a character to move before/after dialogue plays).*
 - Changing backgrounds during scenes *(like the Kylar roof thing).*
 - Add a help/info button and a link to GitHub.
-- Other things I forgot while writing this.
+- more stuff 
 
 ### 🚀 Future Major Features
 - Saving/exporting scenes *(potentially advanced, not sure yet).*
@@ -56,7 +56,6 @@ If you have suggestions or bug reports, open an issue on GitHub.
 
 ### 🛠️ Code-Related Plans
 - Move to React *(I originally made this in JavaScript just to refresh my memory).*
-- Use something better than whatever is being used right now.
 
 ---
 
@@ -74,3 +73,4 @@ This project is licensed under the Apache-2.0 license.
 
 All rights to the original 'Class of '09' content and assets belong to their original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
 
+## shoutout to chatgpt for rewriting my readme
