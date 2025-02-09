@@ -1,77 +1,78 @@
-logo image not displaying
+<p align="center">
+  <img src="https://i.ibb.co/qLvQJ5G2/image-psd.png" width="35%" alt="Class of '09 Scene Generator">
+</p>
 
-> an interactive tool to create custom scenes with a plethora of feautres like character placements, dialogues, voicelines, and backgrounds! (alot more to come)
+> An interactive tool to create custom scenes with a plethora of features like character placements, dialogues, voice lines, and backgrounds! (A lot more to come)
 
-[![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/issues)
-[![GitHub license](https://img.shields.io/github/license/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/blob/main/LICENSE)
-<br>
+[![GitHub stars](https://img.shields.io/github/stars/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/stargazers)  [![GitHub forks](https://img.shields.io/github/forks/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/network/members)  [![GitHub issues](https://img.shields.io/github/issues/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/issues)  [![GitHub license](https://img.shields.io/github/license/tfjoek/class-of-09-scene-generator?style=for-the-badge)](https://github.com/tfjoek/class-of-09-scene-generator/blob/main/LICENSE)
 
-site preview image also not displaying i will fix at some point 
+---
 
+## 🔗 [Link to the Tool](https://givememoneyplease.xyz) **(READ BELOW BEFORE USING PLEASE)**
 
-# [link to the tool online click me! AFTER READING](https://givememoneyplease.xyz)
-# ⚠️ READ ME BEFORE USING PLEASE
-# the site does NOT support mobile devices at all and isnt responsive  <br>and if you are using a smaller screen like laptop and it looks messed up, <br>please try zooming in/out  on  the website to potentially fix any resolution/stretching issues!<br>its missing alot of features it it NOT complete<br>
+![Preview of the site](https://i.ibb.co/xK7zBMwK/image.png)
 
+### ⚠️ Read Before Using!
+- **The site does NOT support mobile devices** and is not responsive.
+- If you're using a **smaller screen (like a laptop)** and things look messed up, try **zooming in/out** to fix resolution/stretching issues.
+- **This tool is incomplete** and missing a lot of features.
 
+---
 
-## 📦 local setup 
+## 📦 Local Setup
 
-
-
-   
-
+```sh
 git clone https://github.com/tfjoek/class-of-09-scene-generator.git
-   cd class-of-09-scene-generator
-   pip install -r requirements.txt
-   python app.py
+cd class-of-09-scene-generator
+pip install -r requirements.txt
+python app.py
+```
 
+> There's some random stuff like geopy from my other projects, will update asasp (lazy)
 
-theres some random stuff like geopy from my other shitty projects so my bad
+---
 
+## 💬 Contributing / Bug Reports & Features
 
-## 💬 contributing / bugs & features
+Feel free to fork this repo and work on anything in the feature/todo list or whatever you want.
+If you have suggestions or bug reports, open an issue on GitHub.
 
-feel free to fork this and do anything on the feature/todo list or just literally anything else you want 
+---
 
-if you have any suggestions / bugreports you can just make an issue on legit anything 
+## 🔧 To-Do / Major Features
 
-## 🔧 todo/major feautres
+### 📌 Current To-Do List
+- All characters/backgrounds from all three games, including every clothing/expression option.<br> *(Currently, only 'The Flipside' characters are available, afaik.)*
+- Allow changing expressions during dialogue.
+- Custom option for dialogue choices (offscreen character support).
+- Moving characters during a scene *(e.g., animate a character to move before/after dialogue plays).*
+- Changing backgrounds during scenes *(like the Kylar roof thing).*
+- Add a help/info button and a link to GitHub.
+- more stuff 
 
+### 🚀 Future Major Features
+- Saving/exporting scenes *(potentially advanced, not sure yet).*
+- Choice generator that affects the dialogue played.
+- Ending generator to use at the conclusion of a scene.
+- Mobile support and overall responsiveness.
 
-### todo currently
-- all characters/backgrounds from all 3 games including every clothing/expression option<br> (characters currently only the flipside afaik)
-- allow changing expression during dialogue 
-- make a custom option for dialogue choice (offscreen character)
-- moving characters during scene (like after/before a dialogue plays u can animate the character to move)
-- changing background in scene (like kylar roof thing)
-- add a help/info button and also link to github 
-- uhh i forgot in the middle of writing this 
-  
+### 🛠️ Code-Related Plans
+- Move to React *(I originally made this in JavaScript just to refresh my memory).*
 
-  
-### more major features 
-- saving/exporting scenes (kinda advanced maybe idk)
-- a choice generator that would affect the dialogue played
-- an ending generator that you can use in the end of ur scene
-- mobile support and general responsibility
+---
 
+## 📞 Contact
 
-### code related
-- move to react probably (i just made this in javascript to get memory refreshed)
-- use something better than anything rightnow lol
+If you need to reach me:
 
+- **Discord**: tfjoek
 
-## 📞 contact 
-if u need to for some reason <br>
-discord: tfjoek
+---
 
+## 📜 License & Copyright
 
-## 📜 license & copyright 
+This project is licensed under the Apache-2.0 license.
 
+All rights to the original 'Class of '09' content and assets belong to their original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
 
-This project is licensed under the Apache-2.0 license. 
-
-All rights to original 'Class of '09' content and assets belong to the original creators. This project is an independent work and is not affiliated with or endorsed by the original developers.
+## hello employer hire me plz
