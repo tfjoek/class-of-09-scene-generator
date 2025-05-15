@@ -8,7 +8,7 @@
 
 ---
 
-## 🔗 [Link to the Tool](https://givememoneyplease.xyz) **(READ BELOW BEFORE USING PLEASE)**
+## 🔗 [Link to the Tool](https://givememoneyplease.xyz) **(currently down sorry)**
 
 ![Preview of the site](https://i.ibb.co/xK7zBMwK/image.png)
 
