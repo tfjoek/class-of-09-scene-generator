@@ -1,2 +1,2 @@
 ﻿# Currently rewriting everything sorry
- old version just looked like shit and was coded horribly 
+new version will be up on atleast 16th of June
